@@ -1,5 +1,5 @@
 import styles from './styles.module.scss'
-import { motion } from 'framer-motion'
+import { motion } from 'motion/react'
 import useEmblaCarousel from 'embla-carousel-react'
 import type { EmblaCarouselType } from 'embla-carousel'
 import { useCallback, useEffect, useState } from 'react'

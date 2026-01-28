@@ -1,10 +1,11 @@
 import { useEffect } from 'react'
 import styles from './styles.module.scss'
-import { $language, setDark } from '../../../store/useSiteStore'
+import { $language, useSiteStore } from '../../../store/useSiteStore'
 import { useSsrStore } from '../../../hooks/useSsrStore'
 
 const Ever17Guide = () => {
 	const language = useSsrStore($language)
+	const setDark = useSiteStore(state => state.setDark)
 	
 	useEffect(() => {
 		setDark('page')

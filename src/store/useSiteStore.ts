@@ -1,5 +1,5 @@
 import { persistentAtom } from '@nanostores/persistent'
-import { atom } from 'nanostores'
+import { create } from 'zustand'
 
 export const $language = persistentAtom<'en'|'es'>('language', 'en')
 
@@ -7,14 +7,20 @@ export const setLanguage = (language: 'en'|'es') => {
 	$language.set(language)
 }
 
-export const $inView = atom(false)
-
-export const setInView = (inView: boolean) => {
-	$inView.set(inView)
+interface State {
+	inView: boolean,
+	setInView: (inView: boolean) => void,
+	dark: 'home'|'page'|false,
+	setDark: (dark: 'home'|'page'|false) => void
 }
 
-export const $dark = atom<'home'|'page'|false>(false)
-
-export const setDark = (dark: 'home'|'page'|false) => {
-	$dark.set(dark)
-}
+export const useSiteStore = create<State>()((set) => ({
+	inView: false,
+	dark: false,
+	setInView: (inView) => {
+		set({ inView })
+	},
+	setDark: (dark) => {
+		set({ dark })
+	}
+}))

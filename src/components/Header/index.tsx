@@ -1,13 +1,13 @@
 import { useState, type ChangeEvent } from 'react'
 import styles from './styles.module.scss'
 import { motion, AnimatePresence } from 'motion/react'
-import { $dark, $inView, $language, setLanguage } from '../../store/useSiteStore'
+import { $language, setLanguage, useSiteStore } from '../../store/useSiteStore'
 import { RxCross1, RxHamburgerMenu } from 'react-icons/rx'
 import { useSsrStore } from '../../hooks/useSsrStore'
 
 const Header = ({ location }: { location: string }) => {
-	const dark = useSsrStore($dark)
-	const inView = useSsrStore($inView)
+	const dark = useSiteStore(state => state.dark)
+	const inView = useSiteStore(state => state.inView)
 	const language = useSsrStore($language)
 	const [viewLanguage, setViewLanguage] = useState(false)
 	const [menuOpen, setMenuOpen] = useState(false)

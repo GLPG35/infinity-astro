@@ -1,13 +1,14 @@
 import { useEffect, useState } from 'react'
 import styles from './styles.module.scss'
-import { AnimatePresence } from 'framer-motion'
+import { AnimatePresence } from 'motion/react'
 import ScreenshotVisualizer from '../ScreenshotVisualizer'
-import { $language, setDark } from '../../store/useSiteStore'
+import { $language, useSiteStore } from '../../store/useSiteStore'
 import { useSsrStore } from '../../hooks/useSsrStore'
 
 const Remember11 = () => {
 	const [viewSS, setViewSS] = useState<number>()
 	const language = useSsrStore($language)
+	const setDark = useSiteStore(state => state.setDark)
 	
 	useEffect(() => {
 		setDark('page')

@@ -9,8 +9,8 @@ import styles from './styles.module.scss'
 import type { EmblaCarouselType } from 'embla-carousel'
 import useEmblaCarousel from 'embla-carousel-react'
 import Autoplay from 'embla-carousel-autoplay'
-import { useInView } from 'framer-motion'
-import { $language, setDark, setInView } from '../../store/useSiteStore'
+import { useInView } from 'motion/react'
+import { $language, useSiteStore } from '../../store/useSiteStore'
 import { useSsrStore } from '../../hooks/useSsrStore'
 
 const Home = () => {
@@ -18,6 +18,8 @@ const Home = () => {
 	const ref = useRef<HTMLElement>(null)
 	const inView = useInView(ref, { margin: '0px 0px -50% 0px', initial: false })
 	const language = useSsrStore($language)
+	const setDark = useSiteStore(state => state.setDark)
+	const setInView = useSiteStore(state => state.setInView)
 	const images = [
 		{
 			horizontal: never7Horizontal,
@@ -53,8 +55,21 @@ const Home = () => {
 	}, [emblaApi, handleSlide])
 
 	useEffect(() => {
-		setInView(inView)
-	}, [inView])
+		const handleScroll = () => {
+			const scrollY = window.scrollY
+			const height = window.innerHeight
+
+			const threshold = scrollY > (height / 10) * 8
+
+			setInView(threshold)
+		}
+
+		window.addEventListener('scroll', handleScroll)
+
+		return () => {
+			window.removeEventListener('scroll', handleScroll)
+		}
+	}, [])
 
 	return (
 		<>

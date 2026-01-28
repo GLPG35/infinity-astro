@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react'
 import styles from './styles.module.scss'
-import { AnimatePresence } from 'framer-motion'
+import { AnimatePresence } from 'motion/react'
 import ScreenshotVisualizer from '../ScreenshotVisualizer'
-import { $language, setDark } from '../../store/useSiteStore'
+import { $language, useSiteStore } from '../../store/useSiteStore'
 import { useSsrStore } from '../../hooks/useSsrStore'
 
 const Never7 = () => {
 	const [viewSS, setViewSS] = useState<number>()
+	const setDark = useSiteStore(state => state.setDark)
 	const screenshots = Array(5).fill(null).map((_, i) => `/screenshots/never7/screenshot_${i + 1}.png`)
 	const language = useSsrStore($language)
 	
