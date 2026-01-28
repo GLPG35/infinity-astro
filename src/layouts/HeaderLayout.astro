@@ -1,0 +1,9 @@
+---
+import Header from '../components/Header'
+import styles from '../styles.module.scss'
+import '../global.scss'
+---
+<div class={styles.main}>
+	<Header location={Astro.url.pathname} client:load />
+	<slot />
+</div>
