@@ -35,6 +35,7 @@ const Ever17 = () => {
 				{language == 'en' ?
 				<div className={styles.text}>
 					<div className={styles.title}>
+						<span>エバーセブンティーン ジ・アウト・オブ・インフィニティ</span>
 						<h2>Ever17 -the out of infinity- Himmel Edition</h2>
 						<div className={styles.date}>August 29, 2002</div>
 					</div>
