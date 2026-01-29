@@ -14,7 +14,7 @@ const Remember11 = () => {
 		setDark('page')
 	}, [])
 	
-	const screenshots = Array(5).fill(null).map((_, i) => `/screenshots/remember11/screenshot_${i + 1}.png`)
+	const screenshots = Array(5).fill(null).map((_, i) => `/screenshots/remember11/screenshot_${i + 1}`)
 	
 	return (
 		<div className={styles.remember11}>
@@ -26,7 +26,9 @@ const Remember11 = () => {
 			<div className={styles.info}>
 				<div className={styles.cover}>
 					<picture>
-						<source srcSet='/remember11_banner_vertical.webp' media='(width >= 950px)' />
+						<source srcSet='/remember11_banner_vertical.avif' type='image/avif' media='(width >= 950px)' />
+						<source srcSet='/remember11_banner_vertical.webp' type='image/webp' media='(width >= 950px)' />
+						<source srcSet='/remember11_banner_horizontal.webp' type='image/avif' media='(width < 950px)' />
 						<img src="/remember11_banner_horizontal.webp" alt="" />
 					</picture>
 				</div>
@@ -130,7 +132,11 @@ const Remember11 = () => {
 						<div className={styles.pictures}>
 							{screenshots.map((url, i) => (
 								<div className={styles.pic} key={url} onClick={() => setViewSS(i)}>
-									<img src={url} alt="" loading='lazy' />
+									<picture>
+										<source srcSet={`${url}.avif`} type='image/avif' />
+										<source srcSet={`${url}.webp`} type='image/webp' />
+										<img src={`${url}.png`} alt="" loading='lazy' />
+									</picture>
 								</div>
 							))}
 						</div>
@@ -169,7 +175,11 @@ const Remember11 = () => {
 						<div className={styles.pictures}>
 							{screenshots.map((url, i) => (
 								<div className={styles.pic} key={url} onClick={() => setViewSS(i)}>
-									<img src={url} alt="" loading='lazy' />
+									<picture>
+										<source srcSet={`${url}.avif`} type='image/avif' />
+										<source srcSet={`${url}.webp`} type='image/webp' />
+										<img src={`${url}.png`} alt="" loading='lazy' />
+									</picture>
 								</div>
 							))}
 						</div>

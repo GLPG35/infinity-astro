@@ -41,14 +41,18 @@ const ScreenshotVisualizer = ({ viewSS, setViewSS, screenshots }: Props) => {
 					{screenshots.map(url => (
 						<div className={`${styles.screenshot} embla__slide`} key={url} onClick={() => setViewSS(undefined)}>
 							<div className={styles.pic} onClick={e => e.stopPropagation()}>
-								<img src={url} alt="" />
+								<picture>
+									<source srcSet={`${url}.avif`} type='image/avif' />
+									<source srcSet={`${url}.webp`} type='image/webp' />
+									<img src={`${url}.png`} alt="" />
+								</picture>
 							</div>
 						</div>
 					))}
 				</div>
 				<div className={styles.bullets}>
 					{screenshots.map((_, i) => (
-						<div className={`${styles.bullet} ${i == bullet ? styles.active : ''}`} onClick={handleBullet(i)}></div>
+						<div key={i} className={`${styles.bullet} ${i == bullet ? styles.active : ''}`} onClick={handleBullet(i)}></div>
 					))}
 				</div>
 			</div>

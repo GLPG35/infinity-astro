@@ -8,7 +8,7 @@ import { useSsrStore } from '../../hooks/useSsrStore'
 const Never7 = () => {
 	const [viewSS, setViewSS] = useState<number>()
 	const setDark = useSiteStore(state => state.setDark)
-	const screenshots = Array(5).fill(null).map((_, i) => `/screenshots/never7/screenshot_${i + 1}.png`)
+	const screenshots = Array(5).fill(null).map((_, i) => `/screenshots/never7/screenshot_${i + 1}`)
 	const language = useSsrStore($language)
 	
 	useEffect(() => {
@@ -25,7 +25,9 @@ const Never7 = () => {
 			<div className={styles.info}>
 				<div className={styles.cover}>
 					<picture>
-						<source srcSet='/never7_banner_vertical.webp' media='(width >= 950px)' />
+						<source srcSet='/never7_banner_vertical.avif' type='image/avif' media='(width >= 950px)' />
+						<source srcSet='/never7_banner_vertical.webp' type='image/webp' media='(width >= 950px)' />
+						<source srcSet='/never7_banner_horizontal.avif' type='image/avif' media='(width < 950px)' />
 						<img src="/never7_banner_horizontal.webp" alt="" />
 					</picture>
 				</div>
@@ -113,7 +115,11 @@ const Never7 = () => {
 						<div className={styles.pictures}>
 							{screenshots.map((url, i) => (
 								<div className={styles.pic} onClick={() => setViewSS(i)} key={url}>
-									<img src={url} alt="" loading='lazy' />
+									<picture>
+										<source srcSet={`${url}.avif`} type='image/avif' />
+										<source srcSet={`${url}.webp`} type='image/webp' />
+										<img src={`${url}.png`} alt="" loading='lazy' />
+									</picture>
 								</div>
 							))}
 						</div>
@@ -142,7 +148,11 @@ const Never7 = () => {
 						<div className={styles.pictures}>
 							{screenshots.map((url, i) => (
 								<div className={styles.pic} onClick={() => setViewSS(i)} key={url}>
-									<img src={url} alt="" loading='lazy' />
+									<picture>
+										<source srcSet={`${url}.avif`} type='image/avif' />
+										<source srcSet={`${url}.webp`} type='image/webp' />
+										<img src={`${url}.png`} alt="" loading='lazy' />
+									</picture>
 								</div>
 							))}
 						</div>

@@ -13,11 +13,10 @@ const Ever17Guide = () => {
 	
 	return (
 		<div className={styles.ever17Guide}>
-			{language == 'en' ?
-			<>
-				<a href='/ever17'>Go back</a>
-				<div className={styles.guide}>
-					<h2>Ever17 Guide</h2>
+			<a href="/ever17">{language == 'en' ? 'Go back' : 'Volver atrás'}</a>
+			<div className={styles.guide}>
+				<h2>{language == 'en' ? 'Ever17 Guide' : 'Guía Ever17'}</h2>
+				{language == 'en' ?
 					<div className={styles.order}>
 						<h3>Required route order</h3>
 						<ol>
@@ -28,19 +27,7 @@ const Ever17Guide = () => {
 							<li>Coco (Start as Kid)</li>
 						</ol>
 					</div>
-					<div className={styles.flowChart}>
-						<h3>Flowchart</h3>
-						<div className={styles.pic}>
-							<img src="/flowchart.png" alt="" />
-						</div>
-					</div>
-				</div>
-			</>
-			: language == 'es' &&
-			<>
-				<a href='/ever17'>Volver atrás</a>
-				<div className={styles.guide}>
-					<h2>Guía Ever17</h2>
+				:
 					<div className={styles.order}>
 						<h3>Orden requerido para las rutas</h3>
 						<ol>
@@ -51,15 +38,17 @@ const Ever17Guide = () => {
 							<li>Coco (Empieza como Kid)</li>
 						</ol>
 					</div>
-					<div className={styles.flowChart}>
-						<h3>Diagrama de flujo</h3>
-						<div className={styles.pic}>
+				}
+				<div className={styles.flowChart}>
+					<h3>{language == 'en' ? 'Flowchart' : 'Diagrama de flujo'}</h3>
+					<div className={styles.pic}>
+						<picture>
+							<source srcSet='/flowchart.avif' type='image/avif' />
 							<img src="/flowchart.png" alt="" />
-						</div>
+						</picture>
 					</div>
 				</div>
-			</>
-			}
+			</div>
 		</div>
 	)
 }
