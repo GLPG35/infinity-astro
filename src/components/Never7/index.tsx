@@ -68,6 +68,7 @@ const Never7 = () => {
 				: language == 'es' &&
 				<div className={styles.text}>
 					<div className={styles.title}>
+						<span>ネバーセブン ジ・エンド・オブ・インフィニティ</span>
 						<h2>Never7 -the end of infinity- Eternal Edition</h2>
 						<div className={styles.date}>23 de marzo, 2000</div>
 					</div>

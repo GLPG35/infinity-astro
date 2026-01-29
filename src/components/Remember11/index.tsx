@@ -76,6 +76,7 @@ const Remember11 = () => {
 				: language == 'es' &&
 				<div className={styles.text}>
 					<div className={styles.title}>
+						<span>リメンバーイレブン ジ・エイジ・オブ・インフィニティ</span>
 						<h2>Remember11 -the age of infinity- Gestalt Edition</h2>
 						<div className={styles.date}>18 de marzo, 2004</div>
 					</div>
