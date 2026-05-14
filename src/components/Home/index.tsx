@@ -139,7 +139,7 @@ const Home = () => {
 					<p>Both games share concepts and dynamics with the <span>Infinity</span> Series, but they don't really affect the series in any way.</p>
 					<p>12Riven was being originally developed by KID, but the company went bankrupt and the rights were sold to CyberFront. The game was still co-written by Uchikoshi but it was directed by Satou Yasuyuki (KID) and Wakabayashi Ken (CyberFront).</p>
 					<p>In the case of code_18, this was a project completely developed by CyberFront, but instead of making it like the prior entries, they ended up making a reboot of the <span>Infinity</span> Series, with the game this time being co-written by Higurashi Chabou and directed by Wakabayashi Ken.</p>
-					<p>These games are only available in Japanese at the moment, with 12Riven being currently fan translated (60% completion according to VNDB), while code_18 for now shows no signs of being translated whatsoever.</p>
+					<p>These games are only available in Japanese at the moment, with 12Riven being currently fan translated (81.1% completion according to VNDB), while code_18 for now shows no signs of being translated whatsoever.</p>
 				</section>
 			</article>
 			: language == 'es' &&
@@ -180,7 +180,7 @@ const Home = () => {
 					<p>Ambos juegos comparten conceptos y dinámicas con la Serie <span>Infinity</span>, pero no afectan realmente a la serie de ninguna manera.</p>
 					<p>12Riven fue originalmente desarrollado por KID, pero la compañía se declaró en bancarrota, vendiendo los derechos a CyberFront. El juego también fue coescrito por Uchikoshi pero fue dirigido por Satou Yasuyuki (KID) y Wakabayashi Ken (CyberFront).</p>
 					<p>En el caso de code_18, este proyecto fue completamente desarrollado por CyberFront, pero en vez de hacerlo similar a las entregas anteriores, decidieron hacer un reboot de la Serie <span>Infinity</span>l, con el juego esta vez siendo coescrito por Higurashi Chabou y dirigido por Wakabayashi Ken.</p>
-					<p>Estos juegos sólo están disponibles en Japonés por el momento, con 12Riven actualmente siendo traducido por fans (60% de progreso según VNDB), mientras que code_18 por ahora no muestra señales de que vaya a ser traducido.</p>
+					<p>Estos juegos sólo están disponibles en Japonés por el momento, con 12Riven actualmente siendo traducido por fans (81.1% de progreso según VNDB), mientras que code_18 por ahora no muestra señales de que vaya a ser traducido.</p>
 				</section>
 			</article>
 			}

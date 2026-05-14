@@ -37,12 +37,10 @@ const Ever17Guide = () => {
 						<ol>
 							<li>Tsugumi (Empieza como Takeshi)</li>
 							<li>Sora (Empieza como Takeshi)</li>
-							<li>Yu (Empieza como Kid)</li>
-							<li>Sara (Empieza como Kid)</li>
+							<li>Yu + Epílogo (Empieza como Kid)</li>
+							<li>Sara + Epílogo (Empieza como Kid)</li>
 							<li>Coco (Empieza como Kid)</li>
 							<li>Tsugumi-Sora Epílogo</li>
-							<li>Yu Epílogo</li>
-							<li>Sara Epílogo</li>
 							<li>Tsugumi-Sora Bad End</li>
 							<li>Yu Bad End</li>
 							<li>Sara Bad End</li>

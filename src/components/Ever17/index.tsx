@@ -44,7 +44,7 @@ const Ever17 = () => {
 						<div className={styles.section}>
 							<span>Base game:</span>
 							<ul>
-								<li className={styles.disabled} title='Links disabled for now as apparently this version of the game crashes'>Ever17 -the out of infinity- Himmel Edition v1.3 [PS2 BGM + Voice + SFX Patch] (Recommended) <a href="https://archive.org/download/ever17-the-out-of-infinity-himmel-edition-v1.3-ps2-bgm-voice-sfx-patch/ever17-the-out-of-infinity-himmel-edition-v1.3-ps2-bgm-voice-sfx-patch_archive.torrent">[Torrent]</a> <a href="https://archive.org/details/ever17-the-out-of-infinity-himmel-edition-v1.3-ps2-bgm-voice-sfx-patch" target='_blank'>[Direct]</a></li>
+								<li>Ever17 -the out of infinity- Himmel Edition v1.3 [PS2 BGM + Voice + SFX Patch] (Recommended) <a href="https://archive.org/download/ever17-the-out-of-infinity-himmel-edition-v1.3-ps2-bgm-voice-sfx-patch/ever17-the-out-of-infinity-himmel-edition-v1.3-ps2-bgm-voice-sfx-patch_archive.torrent">[Torrent]</a> <a href="https://archive.org/details/ever17-the-out-of-infinity-himmel-edition-v1.3-ps2-bgm-voice-sfx-patch" target='_blank'>[Direct]</a></li>
 								<li>Ever17 -the out of infinity- Himmel Edition v1.3 <a href="https://archive.org/download/ever-17-the-out-of-infinity/ever-17-the-out-of-infinity_archive.torrent">[Torrent]</a> <a href="https://archive.org/details/ever-17-the-out-of-infinity" target='_blank'>[Direct]</a></li>
 							</ul>
 							<span>Patch (only if you download the unpatched version of the game):</span>
@@ -99,7 +99,7 @@ const Ever17 = () => {
 						<div className={styles.section}>
 							<span>Juego base:</span>
 							<ul>
-								<li className={styles.disabled} title='Links deshabilitados por ahora ya que aparentemente esta versión del juego crashea'>Ever17 -the out of infinity- Himmel Edition v1.3 [PS2 BGM + Voice + SFX Patch] (Recomendado) <a href="https://archive.org/download/ever17-the-out-of-infinity-himmel-edition-v1.3-ps2-bgm-voice-sfx-patch/ever17-the-out-of-infinity-himmel-edition-v1.3-ps2-bgm-voice-sfx-patch_archive.torrent">[Torrent]</a> <a href="https://archive.org/details/ever17-the-out-of-infinity-himmel-edition-v1.3-ps2-bgm-voice-sfx-patch" target='_blank'>[Directa]</a></li>
+								<li>Ever17 -the out of infinity- Himmel Edition v1.3 [PS2 BGM + Voice + SFX Patch] (Recomendado) <a href="https://archive.org/download/ever17-the-out-of-infinity-himmel-edition-v1.3-ps2-bgm-voice-sfx-patch/ever17-the-out-of-infinity-himmel-edition-v1.3-ps2-bgm-voice-sfx-patch_archive.torrent">[Torrent]</a> <a href="https://archive.org/details/ever17-the-out-of-infinity-himmel-edition-v1.3-ps2-bgm-voice-sfx-patch" target='_blank'>[Directa]</a></li>
 								<li>Ever17 -the out of infinity- Himmel Edition v1.3 <a href="https://archive.org/download/ever-17-the-out-of-infinity/ever-17-the-out-of-infinity_archive.torrent">[Torrent]</a> <a href="https://archive.org/details/ever-17-the-out-of-infinity" target='_blank'>[Directa]</a></li>
 							</ul>
 							<span>Parche (sólo si descargas el juego base sin parchear):</span>
