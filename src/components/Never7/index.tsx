@@ -127,6 +127,12 @@ const Never7 = () => {
 						</div>
 					</div>
 					<div className={styles.section}>
+						<h3>Opening</h3>
+						<div className={styles.video}>
+							<iframe width="100%" height="auto" src="https://www.youtube-nocookie.com/embed/g18sAg1uFfU?si=qJJuD0AkJSuWEMJL" title="Never7 Opening" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+						</div>
+					</div>
+					<div className={styles.section}>
 						<h3>Notes</h3>
 						<p>The HD patch is incomplete, but it's highly recommended. All of the backgrounds and CGs were redrawn in HD, but most of the sprites are still in the original resolution (with a few exceptions).</p>
 						<p>The game still has a couple of typos, those are meant to be fixed in the near future.</p>
@@ -157,6 +163,12 @@ const Never7 = () => {
 									</picture>
 								</div>
 							))}
+						</div>
+					</div>
+					<div className={styles.section}>
+						<h3>Opening</h3>
+						<div className={styles.video}>
+							<iframe width="100%" height="auto" src="https://www.youtube-nocookie.com/embed/fOyAYI47hrk?si=OYTQX21qg6rcgnNH" title="Never7 Opening" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
 						</div>
 					</div>
 					<div className={styles.section}>

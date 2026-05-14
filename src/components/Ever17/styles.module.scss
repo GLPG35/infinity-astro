@@ -168,6 +168,7 @@
 					display: grid;
 					grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
 					gap: 1em;
+					margin-top: 0.5em;
 
 					.pic {
 						height: 100%;
@@ -180,6 +181,17 @@
 							height: 100%;
 							object-fit: cover;
 						}
+					}
+				}
+
+				.video {
+					width: 100%;
+					max-width: 40em;
+					margin-top: 0.5em;
+
+					iframe {
+						aspect-ratio: 4 / 3;
+						border: 3px solid #2977b8;
 					}
 				}
 

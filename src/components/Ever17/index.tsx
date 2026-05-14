@@ -170,6 +170,12 @@ const Ever17 = () => {
 						</div>
 					</div>
 					<div className={styles.section}>
+						<h3>Opening</h3>
+						<div className={styles.video}>
+							<iframe width="100%" height="auto" src="https://www.youtube-nocookie.com/embed/LxsqrWomJa0?si=QcAUqaORh1mtXTZ6" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+						</div>
+					</div>
+					<div className={styles.section}>
 						<h3>Notes</h3>
 						<p>The PS2 BGM + Voice + SFX Patch restores the original background music, voices and sound effects present on the PS2 version. This patch was made because the PC release had to be compressed a lot (PCs in the 2000s were inferior to consoles), so the final result ended up sounding pretty bad. As it's better to experience these games in the best way possible, this patch is highly recommended.</p>
 					</div>
@@ -222,6 +228,12 @@ const Ever17 = () => {
 									</picture>
 								</div>
 							))}
+						</div>
+					</div>
+					<div className={styles.section}>
+						<h3>Opening</h3>
+						<div className={styles.video}>
+							<iframe width="100%" height="auto" src="https://www.youtube-nocookie.com/embed/LxsqrWomJa0?si=QcAUqaORh1mtXTZ6" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
 						</div>
 					</div>
 					<div className={styles.section}>
