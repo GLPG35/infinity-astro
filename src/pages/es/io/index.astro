@@ -1,0 +1,131 @@
+---
+import HeaderLayout from '../../../layouts/HeaderLayout.astro'
+import GalleryContainer from '../../../components/GalleryContainer'
+import games from '../../../utils/games.json'
+const screenshots = games.io.screenshots
+import './styles.scss'
+---
+
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+		<link rel="manifest" href="/site.webmanifest">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Títulos de Nakazawa - I/O</title>
+		<meta name="description" content='And thus begins the revision of "the world"————.' />
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content="Títulos de Nakazawa - I/O" />
+		<meta property="og:description" content='And thus begins the revision of "the world"————.' />
+		<meta property="og:url" content="https://infinityseri.es/" />
+		<meta property="og:image" content="https://infinityseri.es/never7_banner_horizontal.webp" />
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content="https://infinityseri.es/" />
+		<meta property="twitter:title" content="Títulos de Nakazawa - I/O" />
+		<meta property="twitter:description" content='And thus begins the revision of "the world"————.' />
+		<meta property="twitter:image" content="https://infinityseri.es/never7_banner_horizontal.webp" />
+	</head>
+	<body>
+		<HeaderLayout>
+			<div class="io">
+				<div class="info">
+					<div class="cover">
+						<picture>
+							<source srcset='/io_banner_vertical.avif' type='image/avif' media='(width >= 950px)' />
+							<source srcset='/io_banner_vertical.webp' type='image/webp' media='(width >= 950px)' />
+							<source srcset='/io_banner_horizontal.avif' type='image/avif' media='(width < 950px)' />
+							<img src="/io_banner_horizontal.webp" alt="" />
+						</picture>
+					</div>
+					<div class="text">
+						<div class="title">
+							<span>アイオー</span>
+							<h2>I/O revision II</h2>
+							<div class="date">26 de Enero, 2006</div>
+						</div>
+						<div class="downloads">
+							<h3>Descargas</h3>
+							<div class="section">
+								<span>Juego base:</span>
+								<ul>
+									<li>I/O revision II <a href="https://archive.org/download/io-revision-ii/io-revision-ii_archive.torrent" target="_blank">[Torrent]</a> <a href="https://archive.org/download/io-revision-ii/%EF%BC%A9%EF%BC%8F%EF%BC%AF%E2%80%90revision%E2%85%A1.7z" target="_blank">[Directa]</a></li>
+									<span>Asegúrate de ejecutar "ioregadd.bat", ya que el juego necesita modificar algunas cosas del registro para funcionar correctamente</span>
+								</ul>
+							</div>
+							<div class="section">
+								<span>Locale Emulator (obligatorio):</span>
+								<ul>
+									<li><a href="https://github.com/xupefei/Locale-Emulator/releases/download/v2.5.0.1/Locale.Emulator.2.5.0.1.zip" target='_blank'>Locale Emulator</a></li>
+									<span>Debes hacer click derecho en el ejecutable del juego y seleccionar "Locale Emulator > Run in Japanese"</span>
+									<span>Puedes ignorar el locale emulator si ha tienes una forma de ejecutar juegos en japonés en tu computadora</span>
+								</ul>
+							</div>
+							<div class="section">
+								<span>Escalador de imagen (recomendado):</span>
+								<ul>
+									<li><a href="https://github.com/Blinue/Magpie/releases" target='_blank'>Magpie</a></li>
+									<span>El modelo CuNNy es el recomendado para mejores resultados, pero si no quieres usar un escalador de imagen por IA, siempre puedes usar algo como Lanczos</span>
+								</ul>
+							</div>
+						</div>
+						<div class="guide">
+							<h3>Guía (requerida)</h3>
+							<div class="section">
+								<ul>
+									<li><a href="https://namenotdecided.home.blog/2021/10/24/i-o-spoiler-free-guide/" target='_blank'>Cred Fire (Double Eyepatch) - Spoiler-Free Guide</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="moreInfo">
+					<h2>Más información</h2>
+					<div class="text">
+						<div class="section">
+							<h3>Descripción</h3>
+							<div class="description">
+								<p>26 de Abril, 2032 D.C. - Megalópolis de Tokyo - 00:12 en la mañana.</p>
+								<p></p>
+								<p>Un eclipse lunar total ocurre por primera vez en 3 años. Aunque se suponía que era un simple fenómeno astronómico, de pronto se desencadenan una serie de eventos inesperados. Misterios inexplicables, incidentes terroristas, y crímenes en la red surgen como si estuvieran al unísono. La verdad se mezcla con las mentiras, como si el mundo estuviera despierto pero aún durmiente.</p>
+								<p></p>
+								<p>Algo ha comenzado. En algún lugar que nadie puede ver. Algo de lo que nadie sabe.</p>
+								<p></p>
+								<p>Esta es la historia de encuentros casuales y despedidas trágicas de los jóvenes hombres y mujeres que viven en este mundo.</p>
+								<p></p>
+								<p>Y así...</p>
+								<p></p>
+								<p>"El principio es el fin, y el fin es el principio"</p>
+								<span>[De <a href="https://vndb.org/v96" target='_blank'>VNDB</a>]</span>
+							</div>
+						</div>
+						<div class="section">
+							<GalleryContainer client:idle gallery={screenshots} title="Capturas de pantalla" spoilerText={['(Mostrar spoilers)', '(Ocultar spoilers)']} />
+						</div>
+						<div class="section">
+							<h3>Opening</h3>
+							<div class="video">
+								<iframe width="100%" height="auto" src="https://www.youtube-nocookie.com/embed/w4hSVN5Ur_o?si=dsr3eixyT1WdZCcN" title="I/O Opening" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+							</div>
+						</div>
+						<div class="section">
+							<h3>Preguntas frecuentes</h3>
+							<div class="questions">
+								<div class="question">
+									<h4>¿Cómo corro este juego? Hay muchos archivos .exe</h4>
+									<p>Para correr el juego necesitas ejecutar el archivo "io_r2_en.exe" a través del locale emulator.</p>
+								</div>
+								<div class="question">
+									<h4>¿Cómo uso Magpie?</h4>
+									<p>Primero necesitas iniciar Magpie haciendo doble click en el archivo .exe. Una vez que Magpie esté abierto, necesitas elegir un factor de escalado (para este juego se recomienda el 3x) y un modelo de escalado. Como se menciona arriba, CuNNy es altamente recomendado, pero si no quieres usar un modelo de IA puedes usar Lanczos.</p>
+									<p>Después de que todo esté configurado apropiadamente, puedes iniciar el juego (en modo ventana) y presionar el atajo de teclado "Alt+Shift+Q" para activar el escalado. Una vez realizado, un menú debería aparecer en la parte superior de la pantalla con varias opciones, de las cuales sólo necesitas seleccionar la opción para jugar en pantalla completa.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</HeaderLayout>
+	</body>
+</html>

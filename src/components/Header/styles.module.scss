@@ -161,7 +161,7 @@
 				border: 3px solid #2977b8;
 				padding: 0.5em;
 
-				fieldset {
+				li {
 					display: flex;
 					gap: 0.7em;
 					align-items: center;
@@ -175,24 +175,20 @@
 						background-color: #254b71;
 					}
 
-					&:has(input:checked) {
+					&.active {
 						background-color: #2977b8;
-						color: #040c22;
+
+						a {
+							color: #040c22;
+						}
 					}
 
-					label {
+					a {
 						cursor: inherit;
 						padding: 0.7em 1em;
 						padding-right: 3em;
-					}
-
-					input {
-						outline: none;
-						border: none;
-						font-family: 'Zen Antique', serif;
-						font-weight: 400;
-						cursor: inherit;
-						display: none;
+						color: white;
+						text-decoration: none;
 					}
 				}
 			}

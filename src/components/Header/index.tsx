@@ -1,26 +1,30 @@
-import { useState, type ChangeEvent } from 'react'
+import { useEffect, useState } from 'react'
 import styles from './styles.module.scss'
 import { motion, AnimatePresence } from 'motion/react'
-import { $language, setLanguage, useSiteStore } from '../../store/useSiteStore'
+import { useSiteStore } from '../../store/useSiteStore'
 import { RxCross1, RxHamburgerMenu } from 'react-icons/rx'
-import { useSsrStore } from '../../hooks/useSsrStore'
+import { languages } from '../../i18n/ui'
+import { getLangFromUrl, useTranslatedPath, useTranslations } from '../../i18n/utils'
 
-const Header = ({ location }: { location: string }) => {
+const Header = ({ url, location }: { url: URL, location: string }) => {
 	const dark = useSiteStore(state => state.dark)
 	const inView = useSiteStore(state => state.inView)
-	const language = useSsrStore($language)
+	const setDark = useSiteStore(state => state.setDark)
 	const [viewLanguage, setViewLanguage] = useState(false)
 	const [menuOpen, setMenuOpen] = useState(false)
-	
-	const handleLanguage = (e: ChangeEvent<HTMLInputElement>) => {
-		const { value } = e.currentTarget
-		setLanguage(value as 'es'|'en')
+	const currentLang = getLangFromUrl(url)
+	const t = useTranslations(currentLang)
+	const translatePath = useTranslatedPath(currentLang)
+	const trimLocation = location.replace(`/${currentLang}`, '')
 
-		setViewLanguage(false)
-	}
+	useEffect(() => {
+		if (location !== '/') {
+			setDark('page')
+		}
+	}, [])
 	
 	return (
-		<div className={`${styles.header} ${!dark ? '' : dark == 'home' ? styles.dark : styles.darkPage} ${location === '/' && inView ? styles.opacity : ''}`}>
+		<div className={`${styles.header} ${!dark ? '' : dark == 'home' ? styles.dark : styles.darkPage} ${trimLocation === '/' && inView ? styles.opacity : ''}`}>
 			<div className={styles.headerWrapper}>
 				<motion.div className={styles.headerBackground}></motion.div>
 				<button className={styles.menuIcon} onClick={() => setMenuOpen(!menuOpen)}>
@@ -28,27 +32,25 @@ const Header = ({ location }: { location: string }) => {
 				</button>
 				<nav className={menuOpen ? styles.active : ''}>
 					<ul>
-						<li><a href='/' onClick={() => menuOpen && setMenuOpen(false)}>{language == 'en' ? 'Home' : language == 'es' && 'Inicio'}</a></li>
-						<li><a href='/never7' onClick={() => menuOpen && setMenuOpen(false)}>Never7</a></li>
-						<li><a href='/ever17' onClick={() => menuOpen && setMenuOpen(false)}>Ever17</a></li>
-						<li><a href='/remember11' onClick={() => menuOpen && setMenuOpen(false)}>Remember11</a></li>
+						<li><a href={translatePath('/', currentLang)} onClick={() => menuOpen && setMenuOpen(false)}>{t('nav.home')}</a></li>
+						<li><a href={translatePath('/never7', currentLang)} onClick={() => menuOpen && setMenuOpen(false)}>Never7</a></li>
+						<li><a href={translatePath('/ever17', currentLang)} onClick={() => menuOpen && setMenuOpen(false)}>Ever17</a></li>
+						<li><a href={translatePath('/remember11', currentLang)} onClick={() => menuOpen && setMenuOpen(false)}>Remember11</a></li>
+						<li><a href={translatePath('/more', currentLang)} onClick={() => menuOpen && setMenuOpen(false)}>{t('nav.more')}</a></li>
 					</ul>
 				</nav>
 				<div className={styles.languageWrapper}>
 					<div className={styles.language} onClick={() => setViewLanguage(!viewLanguage)}>
-						{language}
+						{currentLang}
 					</div>
 					<AnimatePresence>
 						{viewLanguage &&
 							<motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className={styles.list}>
-								<fieldset>
-									<input type="radio" name='language' id="en" value='en' defaultChecked={language == 'en'} onChange={handleLanguage} />
-									<label htmlFor="en">English</label>
-								</fieldset>
-								<fieldset>
-									<input type="radio" name='language' id="es" value='es' defaultChecked={language == 'es'} onChange={handleLanguage} />
-									<label htmlFor="es">Español</label>
-								</fieldset>
+								{Object.entries(languages).map(([lang, label]) => (
+									<li className={lang === currentLang ? styles.active : ''}>
+										<a href={`${translatePath(trimLocation, lang)}`}>{label}</a>
+									</li>
+								))}
 							</motion.div>
 						}
 					</AnimatePresence>

@@ -1,0 +1,106 @@
+---
+import HeaderLayout from '../../../layouts/HeaderLayout.astro'
+import GalleryContainer from '../../../components/GalleryContainer'
+import games from '../../../utils/games.json'
+const screenshots = games.never7.screenshots
+import './styles.scss'
+---
+
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+		<link rel="manifest" href="/site.webmanifest">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Infinity Series - Never7</title>
+		<meta name="description" content="This story is not over yet. Because only you are in the infinity loop." />
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content="Infinity Series - Never7" />
+		<meta property="og:description" content="This story is not over yet. Because only you are in the infinity loop." />
+		<meta property="og:url" content="https://infinityseri.es/" />
+		<meta property="og:image" content="https://infinityseri.es/never7_banner_horizontal.webp" />
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content="https://infinityseri.es/" />
+		<meta property="twitter:title" content="Infinity Series - Never7" />
+		<meta property="twitter:description" content="This story is not over yet. Because only you are in the infinity loop." />
+		<meta property="twitter:image" content="https://infinityseri.es/never7_banner_horizontal.webp" />
+	</head>
+	<body>
+		<HeaderLayout>
+			<div class="never7">
+				<div class="info">
+					<div class="cover">
+						<picture>
+							<source srcset='/never7_banner_vertical.avif' type='image/avif' media='(width >= 950px)' />
+							<source srcset='/never7_banner_vertical.webp' type='image/webp' media='(width >= 950px)' />
+							<source srcset='/never7_banner_horizontal.avif' type='image/avif' media='(width < 950px)' />
+							<img src="/never7_banner_horizontal.webp" alt="" />
+						</picture>
+					</div>
+					<div class="text">
+						<div class="title">
+							<span>ネバーセブン ジ・エンド・オブ・インフィニティ</span>
+							<h2>Never7 -the end of infinity- Eternal Edition</h2>
+							<div class="date">23 de marzo, 2000</div>
+						</div>
+						<div class="downloads">
+							<h3>Descargas</h3>
+							<div class="section">
+								<span>Juego base:</span>
+								<ul>
+									<li>Never7 -the end of infinity- Eternal Edition v0.6.1 [HD Patch][OP ENG Subs] (Recomendado) <a href="https://archive.org/download/never-7-the-end-of-infinity-eternal-edition-v-0.6.1-hd-patch-op-eng/never-7-the-end-of-infinity-eternal-edition-v-0.6.1-hd-patch-op-eng_archive.torrent">[Torrent]</a> <a href="https://archive.org/details/never-7-the-end-of-infinity-eternal-edition-v-0.6.1-hd-patch-op-eng" target='_blank'>[Directa]</a></li>
+									<li>Never7 -the end of infinity- Eternal Edition v0.6.1 [HD Patch][OP SPA Subs] <a href="https://archive.org/download/never-7-the-end-of-infinity-eternal-edition-v-0.6.1-hd-patch-op-spa/never-7-the-end-of-infinity-eternal-edition-v-0.6.1-hd-patch-op-spa_archive.torrent">[Torrent]</a> <a href="https://archive.org/details/never-7-the-end-of-infinity-eternal-edition-v-0.6.1-hd-patch-op-spa" target='_blank'>[Directa]</a></li>
+									<li>Never7 -the end of infinity- Eternal Edition v0.6.1 <a href="https://www.mediafire.com/file/nshjldhr3zzm760/n7e.love/file" target='_blank'>[Directa]</a></li>
+								</ul>
+							</div>
+							<div class="section">
+								<span>Motor requerido para correrlo:</span>
+								<ul>
+									<li><a href="https://love2d.org/" target='_blank'>LÖVE Engine</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="guide">
+							<h3>Guía (requerida)</h3>
+							<div class="section">
+								<ul>
+									<li><a href="https://www.kirikiribasara.com/2025/03/05/never7-completion-guide/" target='_blank'>Kiri Kiri Basara - Completion Guide</a></li>
+									<span>La mayoría de los diálogos son diferentes a los del juego pero es bastante fácil de entender</span>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="moreInfo">
+					<h2>Más información</h2>
+					<div class="text">
+						<div class="section">
+							<h3>Descripción</h3>
+							<div class="description">
+								<p>Juegas como Makoto, un estudiante que nunca va a sus clases en la universidad. Como castigo, tienes que asistir a un seminario extra en una isla con otros compañeros de clase. Sin embargo, cuando llegas a la isla, cosas extrañas empiezan a suceder. Una chica es encontrada muerta el 6 de abril, con un pequeño cascabel en su mano. Inmediatamente después, te encuentras a tí mismo en la cama y miras la fecha... ¡1 de abril! ¿Fue la visión de la chica sólo un sueño, o posees algún poder para predecir futuros eventos? Esto es lo que tendrás que averiguar, mientras que una serie de muertes extrañas hacen que tu seminario sea mucho más emocionante de lo que habías pensado.</p>
+								<span>[De <a href="http://www.mobygames.com/game/dreamcast/never7-the-end-of-infinity" target='_blank'>Moby Games</a>] (Traducido al español por @glpg35)</span>
+							</div>
+						</div>
+						<div class="section">
+							<GalleryContainer client:idle gallery={screenshots} title="Capturas de pantalla" spoilerText={['(Mostrar spoilers)', '(Ocultar spoilers)']} />
+						</div>
+						<div class="section">
+							<h3>Opening</h3>
+							<div class="video">
+								<iframe width="100%" height="auto" src="https://www.youtube-nocookie.com/embed/fOyAYI47hrk?si=OYTQX21qg6rcgnNH" title="Never7 Opening" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+							</div>
+						</div>
+						<div class="section">
+							<h3>Notas</h3>
+							<p>El parche en HD está incompleto, pero es altamente recomendado. Todos los fondos y CGs fueron redibujados en HD, pero la mayoría de los sprites se encuentran en la resolución original (con algunas excepciones).</p>
+							<p>El juego aún contiene algunas faltas de ortografía, las cuales están pendientes de resolverse en un futuro cercano.</p>
+							<p>El OP con subtítulos en inglés fue hecho por mí (@glpg35) y la versión en español fue hecha por @delta3pc. Estos subtítulos no son oficiales de ninguna forma, y puede que hayan algunos errores (especialmente en la versión en inglés).</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</HeaderLayout>
+	</body>
+</html>

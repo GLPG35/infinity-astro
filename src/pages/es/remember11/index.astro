@@ -1,0 +1,118 @@
+---
+import HeaderLayout from '../../../layouts/HeaderLayout.astro'
+import GalleryContainer from '../../../components/GalleryContainer'
+import games from '../../../utils/games.json'
+const screenshots = games.remember11.screenshots
+import './styles.scss'
+---
+
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+		<link rel="manifest" href="/site.webmanifest">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Infinity Series - Remember11</title>
+		<meta name="description" content="This story is not over yet. Because only you are in the infinity loop." />
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content="Infinity Series - Remember11" />
+		<meta property="og:description" content="This story is not over yet. Because only you are in the infinity loop." />
+		<meta property="og:url" content="https://infinityseri.es/" />
+		<meta property="og:image" content="https://infinityseri.es/remember11_banner_horizontal.webp" />
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content="https://infinityseri.es/" />
+		<meta property="twitter:title" content="Infinity Series - Remember11" />
+		<meta property="twitter:description" content="This story is not over yet. Because only you are in the infinity loop." />
+		<meta property="twitter:image" content="https://infinityseri.es/remember11_banner_horizontal.webp" />
+	</head>
+	<body>
+		<HeaderLayout>
+			<div class="remember11">
+				<div class="info">
+					<div class="cover">
+						<picture>
+							<source srcset='/remember11_banner_vertical.avif' type='image/avif' media='(width >= 950px)' />
+							<source srcset='/remember11_banner_vertical.webp' type='image/webp' media='(width >= 950px)' />
+							<source srcset='/remember11_banner_horizontal.webp' type='image/avif' media='(width < 950px)' />
+							<img src="/remember11_banner_horizontal.webp" alt="" />
+						</picture>
+					</div>
+					<div class="text">
+						<div class="title">
+							<span>リメンバーイレブン ジ・エイジ・オブ・インフィニティ</span>
+							<h2>Remember11 -the age of infinity- Gestalt Edition</h2>
+							<div class="date">18 de marzo, 2004</div>
+						</div>
+						<div class="downloads">
+							<h3>Descargas</h3>
+							<div class="section">
+								<span>Juego base:</span>
+								<ul>
+									<li>Remember11 -the age of infinity- Gestalt Edition v1.3.0 <a href="https://archive.org/download/remember11-the-age-of-infinity-gestalt-edition-v1.3.0/remember11-the-age-of-infinity-gestalt-edition-v1.3.0_archive.torrent">[Torrent]</a> <a href="https://archive.org/details/remember11-the-age-of-infinity-gestalt-edition-v1.3.0" target='_blank'>[Directa]</a></li>
+								</ul>
+							</div>
+							<div class="section">
+								<span>Escalador de imagen (recomendado):</span>
+								<ul>
+									<li><a href="https://github.com/Blinue/Magpie/releases" target='_blank'>Magpie</a></li>
+									<span>El modelo CuNNy es el recomendado para mejores resultados, pero si no quieres usar un escalador de imagen por IA, siempre puedes usar algo como Lanczos</span>
+								</ul>
+							</div>
+						</div>
+						<div class="guide">
+							<h3>Guía no necesaria</h3>
+						</div>
+						<div class="sideContent">
+							<h3>Contenido complementario</h3>
+							<div class="section">
+								<ul>
+									<span>Este contenido debe visualizarse una vez terminado el juego, ya que contiene spoilers gigantes sobre el final del mismo.</span>
+									<li>
+										Drama CD - Remains (ENG Subs) <a href="https://www.youtube.com/watch?v=tkZ_LOIxeLI">[YouTube]</a>
+									</li>
+									<li>
+										Drama CD - Day After Day (No traducido por ahora)
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="moreInfo">
+					<h2>Más información</h2>
+					<div class="text">
+						<div class="section">
+							<h3>Descripción</h3>
+							<div class="description">
+								<p>Fuyukawa Kokoro, una estudiante de sociología de tercer año, sube a un avión con destino a Hokkaido para ir a ver a un sujeto de estudio en el Hospital Psiquiátrico Designado para la Provisión de Aislamiento y Amparo (SPHIA por sus siglas en inglés). Por razones desconocidas, el avión se estrella en las montañas, en mitad de una tormenta de nieve. De los 31 pasajeros, sólo ella, Kusuda Yuni, Yomogi Seiji y Mayuzumi Lin sobreviven. Sin manera de comunicarse con el mundo exterior debido a la fuerte tormenta, los cuatro deciden refugiarse en una cabaña y esperar hasta que las condiciones mejoren.</p>
+								<p>Yukidoh Satoru cae de la torre del reloj de SPHIA. Más tarde despierta y cae en la cuenta de que ha perdido algunos recuerdos y de que alguien lo acecha para matarlo. Sin manera de huir de las instalaciones, la única opción que tiene para salvar su vida es hallar a esa persona de entre los otros tres residentes de SPHIA.</p>
+								<p>Al poco tiempo, Kokoro y Satoru comprenden que, de alguna manera, están intercambiando cuerpos y que Yuni parece encontrarse en las ubicaciones de ambos...</p>
+								<span>[De <a href="https://en.wikipedia.org/wiki/Remember_11:_The_Age_of_Infinity" target='_blank'>Wikipedia</a>] (Traducido al español por @delta3pc)</span>
+							</div>
+						</div>
+						<div class="section">
+							<GalleryContainer client:idle gallery={screenshots} title="Capturas de pantalla" spoilerText={['(Mostrar spoilers)', '(Ocultar spoilers)']} />
+
+						</div>
+						<div class="section">
+							<h3>Preguntas frecuentes</h3>
+							<div class="questions">
+								<div class="question">
+									<h4>¿Cómo corro este juego? Hay muchos archivos .exe</h4>
+									<p>Para correr el juego necesitas ejecutar el archivo "R11-English-Gestalt.exe".</p>
+								</div>
+								<div class="question">
+									<h4>¿Cómo uso Magpie?</h4>
+									<p>Primero necesitas iniciar Magpie haciendo doble click en el archivo .exe. Una vez que Magpie esté abierto, necesitas elegir un factor de escalado (para este juego se recomienda el 3x) y un modelo de escalado. Como se menciona arriba, CuNNy es altamente recomendado, pero si no quieres usar un modelo de IA puedes usar Lanczos.</p>
+									<p>Después de que todo esté configurado apropiadamente, puedes iniciar el juego (en modo ventana), seleccionar la resolución más alta disponible (1280x960) y presionar el atajo de teclado "Alt+Shift+Q" para activar el escalado. Una vez realizado, un menú debería aparecer en la parte superior de la pantalla con varias opciones, de las cuales sólo necesitas seleccionar la opción para jugar en pantalla completa.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</HeaderLayout>
+	</body>
+</html>

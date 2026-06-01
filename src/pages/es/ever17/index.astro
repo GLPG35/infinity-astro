@@ -1,0 +1,149 @@
+---
+import HeaderLayout from '../../../layouts/HeaderLayout.astro'
+import GalleryContainer from '../../../components/GalleryContainer'
+import games from '../../../utils/games.json'
+const screenshots = games.ever17.screenshots
+import './styles.scss'
+---
+
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+		<link rel="manifest" href="/site.webmanifest">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Infinity Series - Ever17</title>
+		<meta name="description" content="This story is not over yet. Because only you are in the infinity loop." />
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content="Infinity Series - Ever17" />
+		<meta property="og:description" content="This story is not over yet. Because only you are in the infinity loop." />
+		<meta property="og:url" content="https://infinityseri.es/" />
+		<meta property="og:image" content="https://infinityseri.es/ever17_banner_horizontal.webp" />
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content="https://infinityseri.es/" />
+		<meta property="twitter:title" content="Infinity Series - Ever17" />
+		<meta property="twitter:description" content="This story is not over yet. Because only you are in the infinity loop." />
+		<meta property="twitter:image" content="https://infinityseri.es/ever17_banner_horizontal.webp" />
+	</head>
+	<body>
+		<HeaderLayout>
+			<div class="ever17">
+				<div class="info">
+					<div class="cover">
+						<picture>
+							<source srcset="/ever17_banner_vertical.avif" type='image/avif' media='(width >= 950px)' />
+							<source srcset="/ever17_banner_vertical.webp" type='image/webp' media='(width >= 950px)' />
+							<source srcset="/ever17_banner_horizontal.avif" type='image/avif' media='(width < 950px)' />
+							<img src="/ever17_banner_horizontal.webp" alt="" />
+						</picture>
+					</div>
+					<div class="text">
+						<div class="title">
+							<span>エバーセブンティーン ジ・アウト・オブ・インフィニティ</span>
+							<h2>Ever17 -the out of infinity- Himmel Edition</h2>
+							<div class="date">29 de agosto, 2002</div>
+						</div>
+						<div class="downloads">
+							<h3>Descargas</h3>
+							<div class="section">
+								<span>Juego base:</span>
+								<ul>
+									<li>Ever17 -the out of infinity- Himmel Edition v1.3 [PS2 BGM + Voice + SFX Patch] (Recomendado) <a href="https://archive.org/download/ever17-the-out-of-infinity-himmel-edition-v1.3-ps2-bgm-voice-sfx-patch/Ever17%20-the%20out%20of%20infinity-%20Himmel%20Edition%20v1.3%20%5BPS2%20BGM%20%2B%20Voice%20%2B%20SFX%20Patch%5D.zip" target='_blank'>[Directa]</a></li>
+									<li>Ever17 -the out of infinity- Himmel Edition v1.3 <a href="https://archive.org/download/ever-17-the-out-of-infinity/ever-17-the-out-of-infinity_archive.torrent">[Torrent]</a> <a href="https://archive.org/details/ever-17-the-out-of-infinity" target='_blank'>[Directa]</a></li>
+								</ul>
+								<span>Parche (sólo si descargas el juego base sin parchear):</span>
+								<ul>
+									<li>Ever17 PS2 BGM + Voice + SFX Patch <a href="https://drive.google.com/drive/folders/1X-hYIMS_wWkChEqikCxSomaRJQm3DBF1?usp=sharing" target='_blank'>[Drive]</a> <a href="https://mega.nz/folder/NrAEVBhC#pSg3_GGKMh0YA38V_SjjiA">[Mega]</a></li>
+								</ul>
+							</div>
+							<div class="section">
+								<span>Escalador de imagen (recomendado):</span>
+								<ul>
+									<li><a href="https://github.com/Blinue/Magpie/releases" target='_blank'>Magpie</a></li>
+									<span>El modelo CuNNy es el recomendado para mejores resultados, pero si no quieres usar un escalador de imagen por IA, siempre puedes usar algo como Lanczos</span>
+								</ul>
+							</div>
+						</div>
+						<div class="guide">
+							<h3>Guía (requerida)</h3>
+							<div class="section">
+								<ul>
+									<li>Incluída dentro del parche</li>
+									<span>El parche incluye un archivo (patch_readme.html) en la carpeta del juego, el cual incluye una guía en forma de diagrama de flujo.</span>
+									<span>Pero si quieres, puedes <a href='/ever17/guide'>verla aquí</a></span>
+								</ul>
+							</div>
+						</div>
+						<div class="sideContent">
+							<h3>Contenido complementario</h3>
+							<div class="section">
+								<ul>
+									<span>Este contenido debe visualizarse una vez terminado el juego, ya que contiene spoilers gigantes sobre el final del mismo.</span>
+									<li>
+										<div class="spoilerContent">
+											CD Drama - <details><summary>[Click para mostrar gran spoiler]</summary>2035</details> (ENG Subs) <a href="https://www.youtube.com/watch?v=5F_TlQjRdmU">[YouTube]</a>
+										</div>
+									</li>
+									<li>
+										CD Drama - After You've Gone (Video con subtítulos en inglés pronto)
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="moreInfo">
+					<h2>Más información</h2>
+					<div class="text">
+						<div class="section">
+							<h3>Descripción</h3>
+							<div class="description">
+								<p>Ever17 es una historia de siete individuos que quedan atrapados 51 metros debajo de la superficie en el parque temático subacuático 'LeMU'. Después del incidente, casi la mitad de LeMU se inunda, y tanto los caminos hacia la superficie como las comunicaciones están cortadas. Por si fuera poco, LeMU se encuentra bajo la constante presión severa del agua, limitando el tiempo disponible para encontrar una salida a tan sólo 119 horas. Escapar no es la única preocupación; sin embargo, muchas preguntas salen a la superficie sobre la legitimidad del accidente y si aquellos que quedaron atrapados fueron llevados allí con algún propósito.</p>
+								<span>[De <a href="https://en.wikipedia.org/wiki/Ever_17:_The_Out_of_Infinity" target='_blank'>Wikipedia</a>] (Traducido al español por @glpg35)</span>
+							</div>
+						</div>
+						<div class="section">
+							<GalleryContainer client:idle gallery={screenshots} title='Capturas de pantalla' spoilerText={['(Mostrar spoilers)', '(Ocultar spoilers)']} />
+						</div>
+						<div class="section">
+							<h3>Opening</h3>
+							<div class="video">
+								<iframe width="100%" height="auto" src="https://www.youtube-nocookie.com/embed/LxsqrWomJa0?si=QcAUqaORh1mtXTZ6" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+							</div>
+						</div>
+						<div class="section">
+							<h3>Notas</h3>
+							<p>El parche de PS2 BGM + Voice + SFX restaura la música de fondo original, voces y efectos de sonido presentes en la versión de PS2. Este parche fue hecho porque la versión de PC tuvo que ser enormemente compresa (las PCs en los años 2000 eran inferiores a las consolas), por lo que el resultado final acabó escuchándose bastante mal. Como es mejor experimentar estos juegos de la mejor manera posible, este parche es altamente recomendado.</p>
+						</div>
+						<div class="section">
+							<h3>Preguntas frecuentes</h3>
+							<div class="questions">
+								<div class="question">
+									<h4>¿Cómo corro este juego? Hay muchos archivos .exe</h4>
+									<p>Para correr el juego necesitas ejecutar el archivo "ever17PC_us.exe" y dejar todas las opciones predeterminadas.</p>
+								</div>
+								<div class="question">
+									<h4>¿Cómo uso Magpie?</h4>
+									<p>Primero necesitas iniciar Magpie haciendo doble click en el archivo .exe. Una vez que Magpie esté abierto, necesitas elegir un factor de escalado (para este juego se recomienda el 3x) y un modelo de escalado. Como se menciona arriba, CuNNy es altamente recomendado, pero si no quieres usar un modelo de IA puedes usar Lanczos.</p>
+									<p>Después de que todo esté configurado apropiadamente, puedes iniciar el juego (en modo ventana) y presionar el atajo de teclado "Alt+Shift+Q" para activar el escalado. Una vez realizado, un menú debería aparecer en la parte superior de la pantalla con varias opciones, de las cuales sólo necesitas seleccionar la opción para jugar en pantalla completa.</p>
+								</div>
+								<div class="question">
+									<h4>¿Cómo aplico el parche de forma independiente?</h4>
+									<p>Primero descarga el parche desde la sección de Descargas y descomprime el archivo descargado. Eso debería dejarte con un archivo .exe. Ejecútalo y la aplicación te pedirá que selecciones una carpeta para aplicar el parche, NO SELECCIONES LA CARPETA DEL JUEGO, sólo selecciona una carpeta cualquiera de tu sistema y la aplicación empezará a extraer los archivos del juego. Una vez que termine la extracción, verás una nueva carpeta dentro de la que seleccionaste anteriormente. Entra a la carpeta, copia los contenidos de la misma y pégalos dentro de la carpeta del juego, reemplazando todos los archivos cuando se te pida.</p>
+								</div>
+								<div class="question">
+									<h4>¿Por qué no puedo jugar el remake disponible en Steam?</h4>
+									<p>El remake no está pensado para aquellas personas que juegan este juego por primera vez. Es preferible que lo juegues luego de terminar Ever17 - Himmel Edition, ya que el remake se desvía mucho del juego original, dando spoilers sobre puntos importantes de la trama en etapas muy tempranas del juego, y a su vez cambiando el guión significativamente, afectando la comprensión general de la trama.</p>
+									<p>Además, Uchikoshi y Nakazawa no participaron en la producción de este remake en ninguna forma, siendo reemplazados por Shikura Chiyomaru (creador de la Science Adventure) para la producción y Yamada Shichirou para la reconstrucción de escenarios.</p>
+									<p>Si aún así quieres experimentar el juego después de jugar el original, puedes <a href="https://store.steampowered.com/app/2392500/Ever_17__The_Out_of_Infinity/" target='_blank'>comprar el juego aquí.</a></p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</HeaderLayout>
+	</body>
+</html>

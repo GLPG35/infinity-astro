@@ -4,8 +4,9 @@ import ClientRouter from 'astro/components/ClientRouter.astro'
 import styles from '../styles.module.scss'
 import '../global.scss'
 ---
+
 <div class={styles.main}>
-	<Header location={Astro.url.pathname} client:load />
+	<Header url={Astro.url} location={Astro.url.pathname} client:load />
 	<slot />
 </div>
 

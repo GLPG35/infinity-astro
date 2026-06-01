@@ -1,0 +1,66 @@
+---
+import { getLangFromUrl, useTranslatedPath } from '../../../i18n/utils'
+import HeaderLayout from '../../../layouts/HeaderLayout.astro'
+import './styles.scss'
+
+const currentLang = getLangFromUrl(Astro.url)
+const translatePath = useTranslatedPath(currentLang)
+---
+
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+		<link rel="manifest" href="/site.webmanifest">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Infinity Series - More</title>
+		<meta name="description" content="This story is not over yet. Because only you are in the infinity loop." />
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content="Infinity Series - More" />
+		<meta property="og:description" content="This story is not over yet. Because only you are in the infinity loop." />
+		<meta property="og:url" content="https://infinityseri.es/" />
+		<meta property="og:image" content="https://infinityseri.es/ever17_banner_horizontal.webp" />
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content="https://infinityseri.es/" />
+		<meta property="twitter:title" content="Infinity Series - More" />
+		<meta property="twitter:description" content="This story is not over yet. Because only you are in the infinity loop." />
+		<meta property="twitter:image" content="https://infinityseri.es/ever17_banner_horizontal.webp" />
+	</head>
+	<body>
+		<HeaderLayout>
+			<article>
+				<section>
+					<h2>Y ahora... ¿qué hago?</h2>
+					<p>Si ya terminaste toda la Serie Infinity, hay algunos títulos más que podrían llamarte la atención.</p>
+				</section>
+				<section>
+					<h3>Títulos de Nakazawa Takumi:</h3>
+					<ul>
+						<li><a href={translatePath('/io', currentLang)}>I/O revision II</a> (2006)</li>
+						<li>Secret Game ~Killer Queen~ (2008)</li>
+						<li>Root Double -Before Crime * After Days- (2012)</li>
+					</ul>
+					<h3>Títulos de Uchikoshi Koutarou:</h3>
+					<ul>
+						<li>Zero Escape: 9 Hours 9 People 9 Doors (2009)</li>
+						<li>Zero Escape: Virtue's Last Reward (2012)</li>
+						<li>Zero Escape: Zero Time Dilemma (2016)</li>
+						<li>AI: The Somnium Files (2019)</li>
+						<li>AI: THE SOMNIUM FILES - nirvanA Initiative (2022)</li>
+						<li>No Sleep For Kaname Date – From AI: THE SOMNIUM FILES (2025)</li>
+					</ul>
+					<h3>Otros títulos relacionados:</h3>
+					<ul>
+						<li>Dunamis15 (2011)</li>
+						<li>Disorder6 (2013)</li>
+					</ul>
+				</section>
+				<section>
+					<p>Los juegos que se sienten más inspirados en Infinity son los de Nakazawa junto con Dunamis15 y Disorder6.</p>
+				</section>
+			</article>
+		</HeaderLayout>
+	</body>
+</html>
