@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef } from 'react'
+import { useCallback, useEffect } from 'react'
 import never7Horizontal from '/never7_banner_horizontal.webp?url'
 import never7HorizontalAvif from '/never7_banner_horizontal.avif?url'
 import never7Vertical from '/never7_banner_vertical.webp?url'

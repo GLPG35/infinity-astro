@@ -2,6 +2,27 @@
 import HeaderLayout from '../layouts/HeaderLayout.astro'
 import HomeSlider from '../components/HomeSlider'
 import './styles.scss'
+
+const rivenData = await fetch('https://api.vndb.org/kana/release', {
+	method: 'POST',
+	body: JSON.stringify({
+		filters: ["id", "=", "112529"],
+		fields: "notes"
+	}),
+	headers: {
+		'Content-Type': 'application/json'
+	}
+}).then(res => res.json().then(json => {
+	if (res.ok) {
+		return json
+	}
+
+	throw new Error(json.message)
+})).catch(() => {
+	return null
+})
+
+const rivenPercent = rivenData ? rivenData.results[0].notes.match(/\b\d+(?:\.\d+)?%/g)[0] : '90%'
 ---
 
 <html lang="en">
@@ -65,7 +86,7 @@ import './styles.scss'
 					<p>Both games share concepts and dynamics with the <span>Infinity</span> Series, but they don't really affect the series in any way.</p>
 					<p>12Riven was being originally developed by KID, but the company went bankrupt and the rights were sold to CyberFront. The game was still co-written by Uchikoshi but it was directed by Satou Yasuyuki (KID) and Wakabayashi Ken (CyberFront).</p>
 					<p>In the case of code_18, this was a project completely developed by CyberFront, but instead of making it like the prior entries, they ended up making a reboot of the <span>Infinity</span> Series, with the game this time being co-written by Higurashi Chabou and directed by Wakabayashi Ken.</p>
-					<p>These games are only available in Japanese at the moment, with 12Riven being currently fan translated (81.1% completion according to VNDB), while code_18 for now shows no signs of being translated whatsoever.</p>
+					<p>These games are only available in Japanese at the moment, with 12Riven being currently fan translated ({rivenPercent} completion according to VNDB), while code_18 for now shows no signs of being translated whatsoever.</p>
 				</section>
 			</article>
 		</HeaderLayout>

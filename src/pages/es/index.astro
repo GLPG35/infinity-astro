@@ -2,6 +2,27 @@
 import HeaderLayout from '../../layouts/HeaderLayout.astro'
 import HomeSlider from '../../components/HomeSlider'
 import './styles.scss'
+
+const rivenData = await fetch('https://api.vndb.org/kana/release', {
+	method: 'POST',
+	body: JSON.stringify({
+		filters: ["id", "=", "112529"],
+		fields: "notes"
+	}),
+	headers: {
+		'Content-Type': 'application/json'
+	}
+}).then(res => res.json().then(json => {
+	if (res.ok) {
+		return json
+	}
+
+	throw new Error(json.message)
+})).catch(() => {
+	return null
+})
+
+const rivenPercent = rivenData ? rivenData.results[0].notes.match(/\b\d+(?:\.\d+)?%/g)[0] : '90%'
 ---
 
 <html lang="es">
@@ -64,8 +85,8 @@ import './styles.scss'
 					<p>Mientras que estas entregas son técnicamente parte de la Serie <span>Infinity</span>, 12Riven fue conocida como la primera y única entrega de la Serie Integral (un spin-off de la Serie <span>Infinity</span>) y code_18 como un reboot de la Serie <span>Infinity</span>.</p>
 					<p>Ambos juegos comparten conceptos y dinámicas con la Serie <span>Infinity</span>, pero no afectan realmente a la serie de ninguna manera.</p>
 					<p>12Riven fue originalmente desarrollado por KID, pero la compañía se declaró en bancarrota, vendiendo los derechos a CyberFront. El juego también fue coescrito por Uchikoshi pero fue dirigido por Satou Yasuyuki (KID) y Wakabayashi Ken (CyberFront).</p>
-					<p>En el caso de code_18, este proyecto fue completamente desarrollado por CyberFront, pero en vez de hacerlo similar a las entregas anteriores, decidieron hacer un reboot de la Serie <span>Infinity</span>l, con el juego esta vez siendo coescrito por Higurashi Chabou y dirigido por Wakabayashi Ken.</p>
-					<p>Estos juegos sólo están disponibles en Japonés por el momento, con 12Riven actualmente siendo traducido por fans (81.1% de progreso según VNDB), mientras que code_18 por ahora no muestra señales de que vaya a ser traducido.</p>
+					<p>En el caso de code_18, este proyecto fue completamente desarrollado por CyberFront, pero en vez de hacerlo similar a las entregas anteriores, decidieron hacer un reboot de la Serie <span>Infinity</span>, con el juego esta vez siendo coescrito por Higurashi Chabou y dirigido por Wakabayashi Ken.</p>
+					<p>Estos juegos sólo están disponibles en Japonés por el momento, con 12Riven actualmente siendo traducido por fans ({rivenPercent} de progreso según VNDB), mientras que code_18 por ahora no muestra señales de que vaya a ser traducido.</p>
 				</section>
 			</article>
 		</HeaderLayout>
