@@ -1,0 +1,121 @@
+---
+import HeaderLayout from '../../../layouts/HeaderLayout.astro'
+import GalleryContainer from '../../../components/GalleryContainer'
+import games from '../../../utils/games.json'
+const screenshots = games.twelveRiven.screenshots
+import './styles.scss'
+
+const rivenData = await fetch('https://api.vndb.org/kana/release', {
+	method: 'POST',
+	body: JSON.stringify({
+		filters: ["id", "=", "112529"],
+		fields: "notes"
+	}),
+	headers: {
+		'Content-Type': 'application/json'
+	}
+}).then(res => res.json().then(json => {
+	if (res.ok) {
+		return json
+	}
+
+	throw new Error(json.message)
+})).catch(() => {
+	return null
+})
+
+const rivenPercent = rivenData ? rivenData.results[0].notes.match(/\b\d+(?:\.\d+)?%/g)[0] : '90%'
+---
+
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+		<link rel="manifest" href="/site.webmanifest">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Integral Series - 12Riven</title>
+		<meta name="description" content="This story is not over yet. Because only you are in the infinity loop." />
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content="Infinity Series - 12Riven" />
+		<meta property="og:description" content="This story is not over yet. Because only you are in the infinity loop." />
+		<meta property="og:url" content="https://infinityseri.es/" />
+		<meta property="og:image" content="https://infinityseri.es/12riven_banner_horizontal.webp" />
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content="https://infinityseri.es/" />
+		<meta property="twitter:title" content="Infinity Series - 12Riven" />
+		<meta property="twitter:description" content="This story is not over yet. Because only you are in the infinity loop." />
+		<meta property="twitter:image" content="https://infinityseri.es/12riven_banner_horizontal.webp" />
+	</head>
+	<body>
+		<HeaderLayout>
+			<div class="twelveRiven">
+				<div class="info">
+					<div class="cover">
+						<picture>
+							<source srcset='/12riven_banner_vertical.avif' type='image/avif' media='(width >= 950px)' />
+							<source srcset='/12riven_banner_vertical.webp' type='image/webp' media='(width >= 950px)' />
+							<source srcset='/12riven_banner_horizontal.webp' type='image/avif' media='(width < 950px)' />
+							<img src="/12riven_banner_horizontal.webp" alt="" />
+						</picture>
+					</div>
+					<div class="text">
+						<div class="title">
+							<span>ツエルブリヴェン ジ・プサイ・クリミナル・オブ・インテグラル</span>
+							<h2>12RIVEN -the Ψcliminal of integral-</h2>
+							<div class="date">13 de marzo, 2008</div>
+						</div>
+						<div class="downloads">
+							<h3>Descargas</h3>
+							<div class="section">
+								<span>Juego base:</span>
+								<ul>
+									<li>No hay ninguna versión del juego disponible por el momento. Traducción al {rivenPercent}</li>
+								</ul>
+							</div>
+							<div class="section">
+								<span>Escalador de imagen (recomendado):</span>
+								<ul>
+									<li><a href="https://github.com/Blinue/Magpie/releases" target='_blank'>Magpie</a></li>
+									<span>El modelo CuNNy es el recomendado para mejores resultados, pero si no quieres usar un escalador de imagen por IA, siempre puedes usar algo como Lanczos</span>
+								</ul>
+							</div>
+						</div>
+						<div class="guide">
+							<h3>Guía pendiente</h3>
+						</div>
+					</div>
+				</div>
+				<div class="moreInfo">
+					<h2>Más información</h2>
+					<div class="text">
+						<div class="section">
+							<h3>Descripción</h3>
+							<div class="description">
+								<p>20 de mayo de 2012, 11:05. Renmaru Miyabidou recibe un email misterioso:</p>
+								<p>"Hoy al mediodía, una chica solitaria dejará este mundo."</p>
+								<p>"Asesinada, en el piso más alto de Integral..."</p>
+								<p>"El nombre de la chica es Myuu... Seguro que ese nombre te es familiar."</p>
+								<p>"Recuerda la promesa, el juramento, que tú hiciste ese día... Renmaru."</p>
+								<p></p>
+								<p></p>
+								<p>La oficial de policía de Seguridad Pública, Narumi Mishima, recibe un email de su amigo y compañero:</p>
+								<p>"Pronto, van a arrebatarle la vida a una chica."</p>
+								<p>"Narumi-senpai, por favor. Protégela. Por favor protege a Myuu."</p>
+								<p>"Para parar su plan, el Proyecto del Segundo Eclipse, su existencia es necesaria."</p>
+								<p></p>
+								<p></p>
+								<p>Ambos se apresuran a llegar al edificio abandonado del hotel Integral, y lo que se encuentran va más allá de lo imaginable: un grupo de personas capaces de usar Ψ, una extraña habilidad especial.</p>
+								<span>[From <a href="https://vndb.org/v247" target='_blank'>VNDB</a>]</span>
+							</div>
+						</div>
+						<div class="section">
+							<GalleryContainer client:idle gallery={screenshots} title="Capturas de pantalla" spoilerText={['(Mostrar spoilers)', '(Ocultar spoilers)']} />
+						</div>
+					</div>
+				</div>
+			</div>
+		</HeaderLayout>
+	</body>
+</html>

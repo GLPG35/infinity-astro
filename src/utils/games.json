@@ -139,6 +139,26 @@
 			]
 		]
 	},
+	"twelveRiven": {
+		"screenshots": [
+			[
+				[
+					"/screenshots/12riven/1.avif",
+					"/screenshots/12riven/1.webp",
+					"/screenshots/12riven/1.jpg"
+				],
+				"visible"
+			],
+			[
+				[
+					"/screenshots/12riven/2.avif",
+					"/screenshots/12riven/2.webp",
+					"/screenshots/12riven/2.jpg"
+				],
+				"visible"
+			]
+		]
+	},
 	"io": {
 		"screenshots": [
 			[
