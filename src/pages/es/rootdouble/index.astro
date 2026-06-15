@@ -3,24 +3,8 @@ import HeaderLayout from '../../../layouts/HeaderLayout.astro'
 import GalleryContainer from '../../../components/GalleryContainer'
 import games from '../../../utils/games.json'
 const screenshots = games.rootDouble.screenshots
+import SteamPrice from '../../../components/SteamPrice'
 import './styles.scss'
-
-const rootData = await fetch('https://store.steampowered.com/api/appdetails?appids=438130', {
-	method: 'GET',
-	headers: {
-		'Content-Type': 'application/json'
-	}
-}).then(res => res.json().then(json => {
-	if (res.ok) {
-		return json
-	}
-
-	throw new Error(json.message)
-})).catch(() => {
-	return null
-})
-
-const { 438130: { data: { price_overview: { discount_percent: discount, initial_formatted: initial, final_formatted: final } } } } = rootData
 ---
 
 <html lang="en">
@@ -65,8 +49,7 @@ const { 438130: { data: { price_overview: { discount_percent: discount, initial_
 						<div class="guide">
 							<h3>Precio (Steam)</h3>
 							<div class="section">
-								<span>{discount > 0 ? `¡El juego está en descuento!` : ''} {discount > 0 ? <s>{initial}</s> : ''} {final}</span>
-								{discount === 0 && <span class="small">Esta sección se actualizará automáticamente si hay algún descuento en Steam</span>}
+								<SteamPrice appId={438130} text='¡El juego está en descuento!' smallText='Esta sección se actualizará automáticamente si hay algún descuento en Steam' loadingText='Cargando precio...' notFoundText='Precio no encontrado' client:load />
 							</div>
 						</div>
 						<div class="downloads">
