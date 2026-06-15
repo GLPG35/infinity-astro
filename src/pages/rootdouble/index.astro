@@ -1,0 +1,130 @@
+---
+import HeaderLayout from '../../layouts/HeaderLayout.astro'
+import GalleryContainer from '../../components/GalleryContainer'
+import games from '../../utils/games.json'
+const screenshots = games.rootDouble.screenshots
+import './styles.scss'
+
+const rootData = await fetch('https://store.steampowered.com/api/appdetails?appids=438130', {
+	method: 'GET',
+	headers: {
+		'Content-Type': 'application/json'
+	}
+}).then(res => res.json().then(json => {
+	if (res.ok) {
+		return json
+	}
+
+	throw new Error(json.message)
+})).catch(() => {
+	return null
+})
+
+const { 438130: { data: { price_overview: { discount_percent: discount, initial_formatted: initial, final_formatted: final } } } } = rootData
+---
+
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+		<link rel="manifest" href="/site.webmanifest">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Nakazawa Titles - Root Double</title>
+		<meta name="description" content="This story is not over yet. Because only you are in the infinity loop." />
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content="Nakazawa Titles - Root Double" />
+		<meta property="og:description" content="This story is not over yet. Because only you are in the infinity loop." />
+		<meta property="og:url" content="https://infinityseri.es/" />
+		<meta property="og:image" content="https://infinityseri.es/rootdouble_banner_horizontal.webp" />
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content="https://infinityseri.es/" />
+		<meta property="twitter:title" content="Nakazawa Titles - Root Double" />
+		<meta property="twitter:description" content="This story is not over yet. Because only you are in the infinity loop." />
+		<meta property="twitter:image" content="https://infinityseri.es/rootdouble_banner_horizontal.webp" />
+	</head>
+	<body>
+		<HeaderLayout>
+			<div class="rootDouble">
+				<div class="info">
+					<div class="cover">
+						<picture>
+							<source srcset='/rootdouble_banner_vertical.avif' type='image/avif' media='(width >= 950px)' />
+							<source srcset='/rootdouble_banner_vertical.webp' type='image/webp' media='(width >= 950px)' />
+							<source srcset='/rootdouble_banner_horizontal.webp' type='image/avif' media='(width < 950px)' />
+							<img src="/rootdouble_banner_horizontal.webp" alt="" />
+						</picture>
+					</div>
+					<div class="text">
+						<div class="title">
+							<span>ルートダブル ビフォー・クライム アフター・デイズ</span>
+							<h2>Root Double -Before Crime * After Days- Xtend Edition</h2>
+							<div class="date">March 29, 2012</div>
+						</div>
+						<div class="guide">
+							<h3>Price (Steam)</h3>
+							<div class="section">
+								<span>{discount > 0 ? `There's an ongoing sale!` : ''} {discount > 0 ? <s>{initial}</s> : ''} {final}</span>
+								{discount === 0 && <span class="small">This section will update automatically if there's a sale on Steam</span>}
+							</div>
+						</div>
+						<div class="downloads">
+							<h3>Downloads</h3>
+							<div class="section">
+								<span>Base game:</span>
+								<ul>
+									<li>Root Double -Before Crime * After Days- Xtend Edition <a href="https://store.steampowered.com/app/438130/Root_Double_Before_Crime__After_Days_Xtend_Edition/">[Steam]</a> <a href="https://www.nintendo.com/us/store/products/root-double-before-crime-after-days-xtend-edition-switch/">[Nintendo Switch]</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="guide">
+							<h3>Guide</h3>
+							<div class="section">
+								<ul>
+									<li><a href="https://forums.fuwanovel.moe/topic/31754-root-double-before-crime-after-days-xtend-edition/">Root Double -Before Crime * After Days- Xtend Edition Guide by lord_tanathus</a></li>
+									<span>Read the guide carefully to understand the game concepts and route order</span>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="moreInfo">
+					<h2>More information</h2>
+					<div class="text">
+						<div class="section">
+							<h3>Description</h3>
+							<div class="description">
+								<p>September 16, 2030 - 6:19 AM.</p>
+								<p>At "LABO", a giant scientific research facility built by a lake on the outskirts of "Rokumei City", an "incident" occurs...!</p>
+								<p>And thus, nine souls are trapped in LABO's basement.</p>
+								<p></p>
+								<p></p>
+								<p>A world where death eats away at every passing moment.</p>
+								<p>The way out, shut. Frequent inexplicable phenomena. Countless mysteries.</p>
+								<p>And... a bizarre murder that occurred right in that closed space.</p>
+								<p>There are two routes out of this extreme situation:</p>
+								<p></p>
+								<p></p>
+								<p>An amnesiac rescue squad captain in LABO- Watase Kasasagi.</p>
+								<p>A nine hour escape drama unfolds from his viewpoint.</p>
+								<p></p>
+								<p></p>
+								<p>A high school student trapped in LABO- Natsuhiko Tenkawa.</p>
+								<p>A journey into his memories of the six days leading up to the incident starts from his viewpoint.</p>
+								<p></p>
+								<p></p>
+								<p>When two intentions and two sets of memories overlap... all will be revealed.</p>
+								<p>In the end, is there a route for all nine to escape with their lives?</p>
+								<span>[From <a href="https://vndb.org/v5000" target='_blank'>VNDB</a>]</span>
+							</div>
+						</div>
+						<div class="section">
+							<GalleryContainer client:idle gallery={screenshots} title="Screenshots" spoilerText={['(Show spoilers)', '(Hide spoilers)']} />
+						</div>
+					</div>
+				</div>
+			</div>
+		</HeaderLayout>
+	</body>
+</html>

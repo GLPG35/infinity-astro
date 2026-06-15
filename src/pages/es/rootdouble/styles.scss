@@ -1,4 +1,4 @@
-.ever17 {
+.rootDouble {
 	width: 100%;
 	display: flex;
 	flex-direction: column;
@@ -17,6 +17,7 @@
 	}
 
 	.info {
+		width: 100%;
 		display: flex;
 		gap: 5em;
 
@@ -80,11 +81,10 @@
 					gap: 0.5em;
 					margin-bottom: 1em;
 					font-size: 1.2em;
-				}
 
-				span {
-					&:nth-child(n+2) {
-						margin-top: 1em;
+					span.small {
+						font-size: 0.8em;
+						font-style: italic;
 					}
 				}
 
@@ -104,22 +104,12 @@
 					}
 
 					li {
-						&.disabled {
-							opacity: 0.5;
-							cursor: not-allowed;
-							text-decoration: line-through;
-
-							&:active {
-								pointer-events: none;
-							}
-						}
-						
 						.spoilerContent {
-							display: inline-block;
+							display: flex;
 							gap: 0.3em;
 
 							details {
-								display: inline-block;
+								display: flex;
 
 								&[open] {
 									summary {
@@ -168,7 +158,6 @@
 					display: grid;
 					grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
 					gap: 1em;
-					margin-top: 0.5em;
 
 					.picture {
 						height: 100%;
@@ -181,17 +170,6 @@
 							height: 100%;
 							object-fit: cover;
 						}
-					}
-				}
-
-				.video {
-					width: 100%;
-					max-width: 40em;
-					margin-top: 0.5em;
-
-					iframe {
-						aspect-ratio: 4 / 3;
-						border: 3px solid #2977b8;
 					}
 				}
 

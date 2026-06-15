@@ -1,0 +1,130 @@
+---
+import HeaderLayout from '../../../layouts/HeaderLayout.astro'
+import GalleryContainer from '../../../components/GalleryContainer'
+import games from '../../../utils/games.json'
+const screenshots = games.rootDouble.screenshots
+import './styles.scss'
+
+const rootData = await fetch('https://store.steampowered.com/api/appdetails?appids=438130', {
+	method: 'GET',
+	headers: {
+		'Content-Type': 'application/json'
+	}
+}).then(res => res.json().then(json => {
+	if (res.ok) {
+		return json
+	}
+
+	throw new Error(json.message)
+})).catch(() => {
+	return null
+})
+
+const { 438130: { data: { price_overview: { discount_percent: discount, initial_formatted: initial, final_formatted: final } } } } = rootData
+---
+
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+		<link rel="manifest" href="/site.webmanifest">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Títulos de Nakazawa - Root Double</title>
+		<meta name="description" content="This story is not over yet. Because only you are in the infinity loop." />
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content="Títulos de Nakazawa - Root Double" />
+		<meta property="og:description" content="This story is not over yet. Because only you are in the infinity loop." />
+		<meta property="og:url" content="https://infinityseri.es/" />
+		<meta property="og:image" content="https://infinityseri.es/rootdouble_banner_horizontal.webp" />
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content="https://infinityseri.es/" />
+		<meta property="twitter:title" content="Títulos de Nakazawa - Root Double" />
+		<meta property="twitter:description" content="This story is not over yet. Because only you are in the infinity loop." />
+		<meta property="twitter:image" content="https://infinityseri.es/rootdouble_banner_horizontal.webp" />
+	</head>
+	<body>
+		<HeaderLayout>
+			<div class="rootDouble">
+				<div class="info">
+					<div class="cover">
+						<picture>
+							<source srcset='/rootdouble_banner_vertical.avif' type='image/avif' media='(width >= 950px)' />
+							<source srcset='/rootdouble_banner_vertical.webp' type='image/webp' media='(width >= 950px)' />
+							<source srcset='/rootdouble_banner_horizontal.webp' type='image/avif' media='(width < 950px)' />
+							<img src="/rootdouble_banner_horizontal.webp" alt="" />
+						</picture>
+					</div>
+					<div class="text">
+						<div class="title">
+							<span>ルートダブル ビフォー・クライム アフター・デイズ</span>
+							<h2>Root Double -Before Crime * After Days- Xtend Edition</h2>
+							<div class="date">29 de marzo, 2012</div>
+						</div>
+						<div class="guide">
+							<h3>Precio (Steam)</h3>
+							<div class="section">
+								<span>{discount > 0 ? `¡El juego está en descuento!` : ''} {discount > 0 ? <s>{initial}</s> : ''} {final}</span>
+								{discount === 0 && <span class="small">Esta sección se actualizará automáticamente si hay algún descuento en Steam</span>}
+							</div>
+						</div>
+						<div class="downloads">
+							<h3>Descargas</h3>
+							<div class="section">
+								<span>Juego base:</span>
+								<ul>
+									<li>Root Double -Before Crime * After Days- Xtend Edition <a href="https://store.steampowered.com/app/438130/Root_Double_Before_Crime__After_Days_Xtend_Edition/">[Steam]</a> <a href="https://www.nintendo.com/us/store/products/root-double-before-crime-after-days-xtend-edition-switch/">[Nintendo Switch]</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="guide">
+							<h3>Guía</h3>
+							<div class="section">
+								<ul>
+									<li><a href="https://forums.fuwanovel.moe/topic/31754-root-double-before-crime-after-days-xtend-edition/">Root Double -Before Crime * After Days- Xtend Edition Guide by lord_tanathus</a></li>
+									<span>Lee la guía pacientemente para entender los conceptos del juego y el orden de las rutas</span>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="moreInfo">
+					<h2>Más información</h2>
+					<div class="text">
+						<div class="section">
+							<h3>Descripción</h3>
+							<div class="description">
+								<p>16 de septiembre, 2030 - 6:19 AM.</p>
+								<p>En "LABO", un centro de investigación científica construido junto a un lago a las afueras de "Ciudad Rokumei", ¡un "incidente" ocurre...!</p>
+								<p>Y así, nueve almas son atrapadas en el sótano de LABO.</p>
+								<p></p>
+								<p></p>
+								<p>Un mundo donde la muerte carcome cada instante que pasa.</p>
+								<p>La salida, cerrada. Frecuentes fenómenos inexplicables. Incontables misterios.</p>
+								<p>Y... un asesinato bizarro que ocurrió exactamente en ese espacio cerrado.</p>
+								<p>Hay dos caminos para salir de esta extrema situación:</p>
+								<p></p>
+								<p></p>
+								<p>Un capitán del escuadrón de rescate con amnesia en LABO- Watase Kasasagi.</p>
+								<p>Un drama de nueve horas de escape se desenvuelve desde su persepectiva.</p>
+								<p></p>
+								<p></p>
+								<p>Un estudiante de secundaria atrapado en LABO- Natsuhiko Tenkawa.</p>
+								<p>Un viaje a sus recuerdos de los seis días previos al incidente empiezan desde su perspectiva.</p>
+								<p></p>
+								<p></p>
+								<p>Cuando dos intenciones y dos conjuntos de recuerdos se superponen... todo será revelado.</p>
+								<p>Al final, ¿habrá un camino para que los nueve logren escapar con vida?</p>
+								<span>[From <a href="https://vndb.org/v5000" target='_blank'>VNDB</a>]</span>
+							</div>
+						</div>
+						<div class="section">
+							<GalleryContainer client:idle gallery={screenshots} title="Screenshots" spoilerText={['(Show spoilers)', '(Hide spoilers)']} />
+						</div>
+					</div>
+				</div>
+			</div>
+		</HeaderLayout>
+	</body>
+</html>

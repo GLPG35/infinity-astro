@@ -18,7 +18,6 @@
 
 	.info {
 		display: flex;
-		min-height: calc(100dvh - 8em);
 		gap: 5em;
 
 		@media (width < 950px) {
@@ -49,6 +48,7 @@
 			display: flex;
 			flex-direction: column;
 			gap: 2em;
+			width: 80%;
 			
 			.title {
 				display: flex;

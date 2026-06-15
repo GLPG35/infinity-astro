@@ -194,5 +194,33 @@
 				"visible"
 			]
 		]
+	},
+	"rootDouble": {
+		"screenshots": [
+			[
+				[
+					"/screenshots/rootdouble/1.avif",
+					"/screenshots/rootdouble/1.webp",
+					"/screenshots/rootdouble/1.jpg"
+				],
+				"visible"
+			],
+			[
+				[
+					"/screenshots/rootdouble/2.avif",
+					"/screenshots/rootdouble/2.webp",
+					"/screenshots/rootdouble/2.jpg"
+				],
+				"visible"
+			],
+			[
+				[
+					"/screenshots/rootdouble/3.avif",
+					"/screenshots/rootdouble/3.webp",
+					"/screenshots/rootdouble/3.jpg"
+				],
+				"visible"
+			]
+		]
 	}
 }
