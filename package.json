@@ -10,11 +10,12 @@
   },
   "dependencies": {
     "@astrojs/react": "^4.4.2",
+    "@astrojs/vercel": "^10.0.8",
     "@nanostores/persistent": "^1.2.1",
     "@nanostores/react": "^1.0.0",
     "@types/react": "^19.2.10",
     "@types/react-dom": "^19.2.3",
-    "astro": "^5.16.16",
+    "astro": "^6.4.7",
     "embla-carousel": "^8.6.0",
     "embla-carousel-autoplay": "^8.6.0",
     "embla-carousel-react": "^8.6.0",

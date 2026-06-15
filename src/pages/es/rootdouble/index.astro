@@ -1,11 +1,17 @@
 ---
+export const prerender = false
+
 import HeaderLayout from '../../../layouts/HeaderLayout.astro'
 import GalleryContainer from '../../../components/GalleryContainer'
 import games from '../../../utils/games.json'
 const screenshots = games.rootDouble.screenshots
 import './styles.scss'
 
-const rootData = await fetch('https://store.steampowered.com/api/appdetails?appids=438130', {
+const country = Astro.request.headers.get('x-vercel-ip-country') 
+  || Astro.request.headers.get('cf-ipcountry') 
+  || 'US';
+
+const rootData = await fetch(`https://store.steampowered.com/api/appdetails?appids=438130?cc=${country}`, {
 	method: 'GET',
 	headers: {
 		'Content-Type': 'application/json'
