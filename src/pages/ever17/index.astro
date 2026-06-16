@@ -4,6 +4,10 @@ import GalleryContainer from '../../components/GalleryContainer'
 import games from '../../utils/games.json'
 const screenshots = games.ever17.screenshots
 import './styles.scss'
+import { getLangFromUrl, useTranslatedPath } from '../../i18n/utils'
+
+const currentLang = getLangFromUrl(Astro.url)
+const translatePath = useTranslatedPath(currentLang)
 ---
 
 <html lang="en">
@@ -72,7 +76,7 @@ import './styles.scss'
 							<ul>
 								<li>Included inside patch</li>
 								<span>The patch includes a file (patch_readme.html) in the game folder, which includes a guide in form of a flowchart.</span>
-								<span>But if you want, you can <a href='/ever17/guide'>access it here</a></span>
+								<span>But if you want, you can <a href={translatePath('/ever17/guide', currentLang)}>access it here</a></span>
 							</ul>
 						</div>
 					</div>

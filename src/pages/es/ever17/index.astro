@@ -4,6 +4,10 @@ import GalleryContainer from '../../../components/GalleryContainer'
 import games from '../../../utils/games.json'
 const screenshots = games.ever17.screenshots
 import './styles.scss'
+import { getLangFromUrl, useTranslatedPath } from '../../../i18n/utils'
+
+const currentLang = getLangFromUrl(Astro.url)
+const translatePath = useTranslatedPath(currentLang)
 ---
 
 <html lang="es">
@@ -72,7 +76,7 @@ import './styles.scss'
 								<ul>
 									<li>Incluída dentro del parche</li>
 									<span>El parche incluye un archivo (patch_readme.html) en la carpeta del juego, el cual incluye una guía en forma de diagrama de flujo.</span>
-									<span>Pero si quieres, puedes <a href='/ever17/guide'>verla aquí</a></span>
+									<span>Pero si quieres, puedes <a href={translatePath('/ever17/guide', currentLang)}>verla aquí</a></span>
 								</ul>
 							</div>
 						</div>

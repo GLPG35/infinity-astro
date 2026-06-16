@@ -1,6 +1,10 @@
 ---
 import HeaderLayout from '../../../../layouts/HeaderLayout.astro'
 import './styles.scss'
+import { getLangFromUrl, useTranslatedPath } from '../../../../i18n/utils'
+
+const currentLang = getLangFromUrl(Astro.url)
+const translatePath = useTranslatedPath(currentLang)
 ---
 
 <html lang="es">
@@ -27,7 +31,7 @@ import './styles.scss'
 	<body>
 		<HeaderLayout>
 			<div class="ever17Guide">
-				<a href="/ever17">Volver atrás</a>
+				<a href={translatePath("/ever17", currentLang)}>Volver atrás</a>
 				<div class="guide">
 					<h2>Guía Ever17</h2>
 					<div class="order">

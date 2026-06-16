@@ -1,0 +1,62 @@
+---
+import HeaderLayout from '../../../layouts/HeaderLayout.astro'
+import './styles.scss'
+import { getLangFromUrl, useTranslatedPath } from '../../../i18n/utils'
+
+const currentLang = getLangFromUrl(Astro.url)
+const translatePath = useTranslatedPath(currentLang)
+---
+
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+		<link rel="manifest" href="/site.webmanifest">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Uchikoshi Titles - 999 Guide</title>
+		<meta name="description" content="The time limit is 9 hours. The companions are 9 people. The key to escape is the 9th door." />
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content="Uchikoshi Titles - 999 Guide" />
+		<meta property="og:description" content="The time limit is 9 hours. The companions are 9 people. The key to escape is the 9th door." />
+		<meta property="og:url" content="https://infinityseri.es/" />
+		<meta property="og:image" content="https://infinityseri.es/999_banner_horizontal.webp" />
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content="https://infinityseri.es/" />
+		<meta property="twitter:title" content="Uchikoshi Titles - 999 Guide" />
+		<meta property="twitter:description" content="The time limit is 9 hours. The companions are 9 people. The key to escape is the 9th door." />
+		<meta property="twitter:image" content="https://infinityseri.es/999_banner_horizontal.webp" />
+	</head>
+	<body>
+		<HeaderLayout>
+			<div class="nineNineNineGuide">
+				<a href={translatePath("/999", currentLang)}>Go back</a>
+				<div class="guide">
+					<h2>999 Guide</h2>
+					<div class="order">
+						<h3>Required route order</h3>
+						<ol>
+							<li>Door 4, Door 7, Door 1 (follow flowchart story checks)</li>
+							<li>Door 5, Door 8, Door 1</li>
+							<li>Door 4, Door 8, Door 6</li>
+							<li>Door 4/5, Door 3, Door 2</li>
+							<li>Door 5, Door 8, Door 6</li>
+							<li>True Ending - Repeat steps for ending A</li>
+						</ol>
+					</div>
+					<div class="flowChart">
+						<h3>Flowchart</h3>
+						<div class="pic">
+							<picture>
+								<source srcset='/999_flowchart.avif' type='image/avif' />
+								<source srcset='/999_flowchart.webp' type='image/webp' />
+								<img src="/999_flowchart.jpg" alt="" />
+							</picture>
+						</div>
+					</div>
+				</div>
+			</div>
+		</HeaderLayout>
+	</body>
+</html>

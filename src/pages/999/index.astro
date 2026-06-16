@@ -1,0 +1,105 @@
+---
+import HeaderLayout from '../../layouts/HeaderLayout.astro'
+import GalleryContainer from '../../components/GalleryContainer'
+import games from '../../utils/games.json'
+const screenshots = games.nineNineNine.screenshots
+import './styles.scss'
+import { getLangFromUrl, useTranslatedPath } from '../../i18n/utils'
+
+const currentLang = getLangFromUrl(Astro.url)
+const translatePath = useTranslatedPath(currentLang)
+---
+
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+		<link rel="manifest" href="/site.webmanifest">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Uchikoshi Titles - 999</title>
+		<meta name="description" content="The time limit is 9 hours. The companions are 9 people. The key to escape is the 9th door." />
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content="Uchikoshi Titles - 999" />
+		<meta property="og:description" content="The time limit is 9 hours. The companions are 9 people. The key to escape is the 9th door." />
+		<meta property="og:url" content="https://infinityseri.es/" />
+		<meta property="og:image" content="https://infinityseri.es/999_banner_horizontal.webp" />
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content="https://infinityseri.es/" />
+		<meta property="twitter:title" content="Uchikoshi Titles - 999" />
+		<meta property="twitter:description" content="The time limit is 9 hours. The companions are 9 people. The key to escape is the 9th door." />
+		<meta property="twitter:image" content="https://infinityseri.es/999_banner_horizontal.webp" />
+	</head>
+	<body>
+		<HeaderLayout>
+			<div class="nineNineNine">
+				<div class="info">
+					<div class="cover">
+						<picture>
+							<source srcset='/999_banner_vertical.avif' type='image/avif' media='(width >= 950px)' />
+							<source srcset='/999_banner_vertical.webp' type='image/webp' media='(width >= 950px)' />
+							<source srcset='/999_banner_horizontal.webp' type='image/avif' media='(width < 950px)' />
+							<img src="/999_banner_horizontal.webp" alt="" />
+						</picture>
+					</div>
+					<div class="text">
+						<div class="title">
+							<span>極限脱出 9時間9人9の扉</span>
+							<h2>999: Nine Hours, Nine Persons, Nine Doors</h2>
+							<div class="date">December 10, 2009</div>
+						</div>
+						<div class="downloads">
+							<h3>Downloads</h3>
+							<div class="section">
+								<span>Base game (Emulator):</span>
+								<ul>
+									<li>999: Nine Hours, Nine Persons, Nine Doors (Nintendo DS) [Decrypted] (Fast Text Patch) (Recommended) <a href="https://archive.org/download/999-nine-hours-nine-persons-nine-doors-usa-decrypted-fast-text-patch/Nine%20Hours%2C%20Nine%20Persons%2C%20Nine%20Doors%20%28USA%29%20%5BDecrypted%5D%20%28Fast%20Text%20Patch%29.nds" target="_blank">[Direct]</a> <a href="https://archive.org/download/999-nine-hours-nine-persons-nine-doors-usa-decrypted-fast-text-patch/999-nine-hours-nine-persons-nine-doors-usa-decrypted-fast-text-patch_archive.torrent" target="_blank">[Torrent]</a></li>
+									<li>999: Nine Hours, Nine Persons, Nine Doors (Nintendo DS) [Decrypted] <a href="https://archive.org/download/999-nine-hours-nine-persons-nine-doors-usa-decrypted/Nine%20Hours%2C%20Nine%20Persons%2C%20Nine%20Doors%20%28USA%29%20%5BDecrypted%5D.nds" target="_blank">[Direct]</a> <a href="https://archive.org/download/999-nine-hours-nine-persons-nine-doors-usa-decrypted/999-nine-hours-nine-persons-nine-doors-usa-decrypted_archive.torrent" target="_blank">[Torrent]</a></li>
+								</ul>
+							</div>
+							<div class="section">
+								<span>Base game (Real hardware):</span>
+								<ul>
+									<li>999: Nine Hours, Nine Persons, Nine Doors (Nintendo DS) [Encrypted] (Fast Text Patch) (Recommended) <a href="https://archive.org/download/999-nine-hours-nine-persons-nine-doors-usa-encrypted-fast-text-patch/Nine%20Hours%2C%20Nine%20Persons%2C%20Nine%20Doors%20%28USA%29%20%5BEncrypted%5D%20%28Fast%20Text%20Patch%29.nds" target="_blank">[Direct]</a> <a href="https://archive.org/download/999-nine-hours-nine-persons-nine-doors-usa-encrypted-fast-text-patch/999-nine-hours-nine-persons-nine-doors-usa-encrypted-fast-text-patch_archive.torrent" target="_blank">[Torrent]</a></li>
+									<li>999: Nine Hours, Nine Persons, Nine Doors (Nintendo DS) [Encrypted] <a href="https://archive.org/download/999-nine-hours-nine-persons-nine-doors-usa-encrypted/Nine%20Hours%2C%20Nine%20Persons%2C%20Nine%20Doors%20%28USA%29%20%5BEncrypted%5D.nds" target="_blank">[Direct]</a> <a href="https://archive.org/download/999-nine-hours-nine-persons-nine-doors-usa-encrypted/999-nine-hours-nine-persons-nine-doors-usa-encrypted_archive.torrent" target="_blank">[Torrent]</a></li>
+									<span>To clarify: encrypted roms are used on real hardware, while decrypted roms are used on emulators.</span>
+								</ul>
+							</div>
+							<div class="section">
+								<span>Emulator required to run:</span>
+								<ul>
+									<li><a href="https://melonds.kuribo64.net/downloads.php" target="_blank">melonDS Emulator</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="guide">
+							<h3>Guide (recommended)</h3>
+							<div class="section">
+								<ul>
+									<li><a href={translatePath('/999/guide', currentLang)}>999 Guide</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="moreInfo">
+					<h2>More information</h2>
+					<div class="text">
+						<div class="section">
+							<h3>Description</h3>
+							<div class="description">
+								<p>Nine people have been kidnapped by a mysterious person called Zero and are forced to participate in a survival game called the "Nonary Game". Each player has a bracelet numbered 1–9, which they must use to pass through doors numbered 1–9 to reach the exit before 9 hours run out and the ship in which they are in sinks.</p>
+								<p>Various puzzles must be solved in order to advance through the ship and reach the exit, while uncovering the mysteries behind the Nonary Game.</p>
+								<span>[From <a href="https://vndb.org/v3112" target='_blank'>VNDB</a>]</span>
+							</div>
+						</div>
+						<div class="section">
+							<GalleryContainer client:idle gallery={screenshots} title="Screenshots" spoilerText={['(Show spoilers)', '(Hide spoilers)']} />
+						</div>
+					</div>
+				</div>
+			</div>
+		</HeaderLayout>
+	</body>
+</html>

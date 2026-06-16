@@ -222,5 +222,33 @@
 				"visible"
 			]
 		]
+	},
+	"nineNineNine": {
+		"screenshots": [
+			[
+				[
+					"/screenshots/999/1.avif",
+					"/screenshots/999/1.webp",
+					"/screenshots/999/1.jpg"
+				],
+				"visible"
+			],
+			[
+				[
+					"/screenshots/999/2.avif",
+					"/screenshots/999/2.webp",
+					"/screenshots/999/2.jpg"
+				],
+				"visible"
+			],
+			[
+				[
+					"/screenshots/999/3.avif",
+					"/screenshots/999/3.webp",
+					"/screenshots/999/3.jpg"
+				],
+				"visible"
+			]
+		]
 	}
 }
