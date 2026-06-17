@@ -16,11 +16,14 @@ import type { EmblaCarouselType } from 'embla-carousel'
 import useEmblaCarousel from 'embla-carousel-react'
 import Autoplay from 'embla-carousel-autoplay'
 import { useSiteStore } from '../../store/useSiteStore'
+import { getLangFromUrl, useTranslatedPath } from '../../i18n/utils'
 
-const HomeSlider = () => {
+const HomeSlider = ({ url }: { url: URL }) => {
 	const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [Autoplay({ stopOnInteraction: false })])
 	const setDark = useSiteStore(state => state.setDark)
 	const setInView = useSiteStore(state => state.setInView)
+	const currentLang = getLangFromUrl(url)
+	const translatePath = useTranslatedPath(currentLang)
 	const images = [
 		{
 			horizontal: never7Horizontal,
@@ -84,7 +87,7 @@ const HomeSlider = () => {
 		<div className={`${styles.gamesWrapper} embla`} ref={emblaRef}>
 			<div className={`${styles.games} embla__container`}>
 				{images.map(({ horizontal, horizontalAvif, vertical, verticalAvif, link }) => (
-					<div key={link} className={`${styles.game} embla__slide`} onClick={() => window.location.href = `/${link}`}>
+					<div key={link} className={`${styles.game} embla__slide`} onClick={() => window.location.href = translatePath(`/${link}`, currentLang)}>
 						<div className={styles.banner}>
 							<picture>
 								<source srcSet={horizontalAvif} type='image/avif' media='(width >= 950px)' />

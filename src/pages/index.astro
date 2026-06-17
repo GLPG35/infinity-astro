@@ -2,6 +2,10 @@
 import HeaderLayout from '../layouts/HeaderLayout.astro'
 import HomeSlider from '../components/HomeSlider'
 import './styles.scss'
+import { getLangFromUrl, useTranslatedPath } from '../i18n/utils'
+
+const currentLang = getLangFromUrl(Astro.url)
+const translatePath = useTranslatedPath(currentLang)
 
 const rivenData = await fetch('https://api.vndb.org/kana/release', {
 	method: 'POST',
@@ -48,11 +52,11 @@ const rivenPercent = rivenData ? rivenData.results[0].notes.match(/\b\d+(?:\.\d+
 	</head>
 	<body>
 		<HeaderLayout>
-			<HomeSlider client:load />
+			<HomeSlider url={Astro.url} client:load />
 			<article>
 				<section>
 					<h2>What is the <span>Infinity</span> Series?</h2>
-					<p><span>Infinity</span> is a romance/sci-fi visual novel trilogy developed by KID (5pb./MAGES. predecessor), co-written by Uchikoshi Kotaro (Zero Escape & AI: The Somnium Files) and directed and co-written by Nakazawa Takumi (Root Double & I/O).</p>
+					<p><span>Infinity</span> is a romance/sci-fi visual novel trilogy developed by KID (5pb./MAGES. predecessor), co-written by Uchikoshi Koutarou (Zero Escape & AI: The Somnium Files) and directed and co-written by Nakazawa Takumi (Root Double & I/O).</p>
 					<p>The three entries take place in the same universe and share plot elements such as technology, historical events, phenomena and mechanics.</p>
 				</section>
 				<section>
@@ -78,7 +82,7 @@ const rivenPercent = rivenData ? rivenData.results[0].notes.match(/\b\d+(?:\.\d+
 					<p>The only entries available right now on Steam are Never7 and Ever17 as "remastered" versions.</p>
 					<p>Never7 suffers from bad upscaling, a 16:9 aspect ratio that cuts sprites in half and also cuts backgrounds, a really bad translation and an ugly UI. This release is really inferior compared to the Eternal Edition with the HD Patch.</p>
 					<p>For Ever17 this is tricky, because in this case the Steam release is completely different compared to the Himmel Edition. This is because the Steam release is based on the Xbox 360 remake of the game. This one used 3D assets (these ones were changed in favor of the superior 2D sprites in the Steam release) and completely revamped backgrounds and music, and also new or edited CGs. They also changed the script in weird ways, as a result, changing the story and the experience as a whole.</p>
-					<p>As I said in the <a href="/ever17">Ever17 FAQ section</a>, you can play it if you want, but make sure to experience it after the Himmel Edition.</p>
+					<p>As I said in the <a href={translatePath("/ever17", currentLang)}>Ever17 FAQ section</a>, you can play it if you want, but make sure to experience it after the Himmel Edition.</p>
 				</section>
 				<section>
 					<h2>What about 12Riven and code_18?</h2>

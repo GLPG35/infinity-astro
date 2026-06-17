@@ -52,24 +52,17 @@ const translatePath = useTranslatedPath(currentLang)
 						<div class="downloads">
 							<h3>Descargas</h3>
 							<div class="section">
-								<span>Juego base (Emulador):</span>
+								<span>Juego base (Emulador y hardware real):</span>
 								<ul>
 									<li>999: Nine Hours, Nine Persons, Nine Doors (Nintendo DS) [Desencriptado] (Fast Text Patch) (Recomendado) <a href="https://archive.org/download/999-nine-hours-nine-persons-nine-doors-usa-decrypted-fast-text-patch/Nine%20Hours%2C%20Nine%20Persons%2C%20Nine%20Doors%20%28USA%29%20%5BDecrypted%5D%20%28Fast%20Text%20Patch%29.nds" target="_blank">[Directa]</a> <a href="https://archive.org/download/999-nine-hours-nine-persons-nine-doors-usa-decrypted-fast-text-patch/999-nine-hours-nine-persons-nine-doors-usa-decrypted-fast-text-patch_archive.torrent" target="_blank">[Torrent]</a></li>
 									<li>999: Nine Hours, Nine Persons, Nine Doors (Nintendo DS) [Desencriptado] <a href="https://archive.org/download/999-nine-hours-nine-persons-nine-doors-usa-decrypted/Nine%20Hours%2C%20Nine%20Persons%2C%20Nine%20Doors%20%28USA%29%20%5BDecrypted%5D.nds" target="_blank">[Directa]</a> <a href="https://archive.org/download/999-nine-hours-nine-persons-nine-doors-usa-decrypted/999-nine-hours-nine-persons-nine-doors-usa-decrypted_archive.torrent" target="_blank">[Torrent]</a></li>
 								</ul>
 							</div>
 							<div class="section">
-								<span>Juego base (Hardware real):</span>
-								<ul>
-									<li>999: Nine Hours, Nine Persons, Nine Doors (Nintendo DS) [Encriptado] (Fast Text Patch) (Recomendado) <a href="https://archive.org/download/999-nine-hours-nine-persons-nine-doors-usa-encrypted-fast-text-patch/Nine%20Hours%2C%20Nine%20Persons%2C%20Nine%20Doors%20%28USA%29%20%5BEncrypted%5D%20%28Fast%20Text%20Patch%29.nds" target="_blank">[Directa]</a> <a href="https://archive.org/download/999-nine-hours-nine-persons-nine-doors-usa-encrypted-fast-text-patch/999-nine-hours-nine-persons-nine-doors-usa-encrypted-fast-text-patch_archive.torrent" target="_blank">[Torrent]</a></li>
-									<li>999: Nine Hours, Nine Persons, Nine Doors (Nintendo DS) [Encriptado] <a href="https://archive.org/download/999-nine-hours-nine-persons-nine-doors-usa-encrypted/Nine%20Hours%2C%20Nine%20Persons%2C%20Nine%20Doors%20%28USA%29%20%5BEncrypted%5D.nds" target="_blank">[Directa]</a> <a href="https://archive.org/download/999-nine-hours-nine-persons-nine-doors-usa-encrypted/999-nine-hours-nine-persons-nine-doors-usa-encrypted_archive.torrent" target="_blank">[Torrent]</a></li>
-									<span>Para aclarar: las roms encriptadas se usan en hardware real, mientras que las desencriptadas se usan en emuladores.</span>
-								</ul>
-							</div>
-							<div class="section">
 								<span>Emulador requerido para correrlo:</span>
 								<ul>
 									<li><a href="https://melonds.kuribo64.net/downloads.php" target="_blank">melonDS Emulator</a></li>
+									<span>No necesitas usar un emulador si ya tienes una consola como la Nintendo DS o 3DS.</span>
 								</ul>
 							</div>
 						</div>
@@ -78,6 +71,7 @@ const translatePath = useTranslatedPath(currentLang)
 							<div class="section">
 								<ul>
 									<li><a href={translatePath('/999/guide', currentLang)}>Guía 999</a></li>
+									<span>La guía es meramente opcional, ya que algunas personas pueden querer experimentar la historia por su cuenta. Aún así, recomiendo usarla si quieres experimentar la historia en el mejor orden posible.</span>
 								</ul>
 							</div>
 						</div>
@@ -96,6 +90,20 @@ const translatePath = useTranslatedPath(currentLang)
 						</div>
 						<div class="section">
 							<GalleryContainer client:idle gallery={screenshots} title="Screenshots" spoilerText={['(Mostrar spoilers)', '(Ocultar spoilers)']} />
+						</div>
+						<div class="section">
+							<h3>FAQ</h3>
+							<div class="questions">
+								<div class="question">
+									<h4>¿Cómo corro el juego en el emulador?</h4>
+									<p>Para correr el juego sólo necesitas abrir el emulador y abrir el archivo .nds.</p>
+								</div>
+								<div class="question">
+									<h4>¿Por qué no puedo jugar el port que está disponible en Steam?</h4>
+									<p>A pesar de que ya hay un port que es jugable y ofrece voces junto con "mejores" gráficos, la versión de Nintendo DS es la forma en la que el juego fue diseñado para ser jugado.</p>
+									<p>Si quieres, puedes comprar el juego en Steam de todas formas <a href="https://store.steampowered.com/app/477740/Zero_Escape_The_Nonary_Games/" target="_blank">aquí</a> (aunque esta es una colección de dos juegos), pero es recomendable jugarlo después de experimentar la versión original de Nintendo DS.</p>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
