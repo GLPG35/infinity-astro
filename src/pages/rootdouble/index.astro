@@ -7,7 +7,9 @@ import games from '../../utils/games.json'
 const screenshots = games.rootDouble.screenshots
 import './styles.scss'
 
-const rootData = await fetch('https://store.steampowered.com/api/appdetails?appids=438130', {
+const country = Astro.request.headers.get('x-vercel-ip-country') || 'US'
+
+const rootData = await fetch(`https://store.steampowered.com/api/appdetails?appids=438130&cc=${country}`, {
 	method: 'GET',
 	headers: {
 		'Content-Type': 'application/json'
