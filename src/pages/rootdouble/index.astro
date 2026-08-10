@@ -7,12 +7,16 @@ import games from '../../utils/games.json'
 const screenshots = games.rootDouble.screenshots
 import './styles.scss'
 
-const country = Astro.request.headers.get('x-vercel-ip-country') || 'US'
+const clientIp = Astro.request.headers.get('x-forwarded-for') || Astro.request.headers.get('x-real-ip') || ''
 
-const rootData = await fetch(`https://store.steampowered.com/api/appdetails?appids=438130&cc=${country}`, {
+const rootData = await fetch(`https://store.steampowered.com/api/appdetails?appids=438130`, {
 	method: 'GET',
 	headers: {
-		'Content-Type': 'application/json'
+		'Content-Type': 'application/json',
+		'X-Forwarded-For': clientIp,
+		'X-Real-IP': clientIp,
+		'True-Client-IP': clientIp,
+		'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
 	}
 }).then(res => res.json().then(json => {
 	if (res.ok) {
@@ -137,8 +141,4 @@ const { 438130: { data: { price_overview: { discount_percent: discount, initial_
 			</div>
 		</HeaderLayout>
 	</body>
-	<script define:vars={{ rootData, country }}>
-		console.log(country)
-		console.log(rootData)
-	</script>
 </html>
