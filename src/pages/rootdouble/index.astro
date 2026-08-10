@@ -10,7 +10,7 @@ import './styles.scss'
 Astro.response.headers.set('Cache-Control', 'private, no-cache, no-store, must-revalidate')
 const clientIp = Astro.request.headers.get('x-forwarded-for')?.split(',')[0].trim() || Astro.request.headers.get('x-real-ip') || ''
 
-const country = await fetch(`https://country.is/${clientIp}`).then(res => res.json().then(json => {
+const country = await fetch(`https://api.country.is/${clientIp}`).then(res => res.json().then(json => {
 	if (res.ok) {
 		return json
 	}
