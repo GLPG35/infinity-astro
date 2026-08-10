@@ -7,7 +7,23 @@ import games from '../../../utils/games.json'
 const screenshots = games.rootDouble.screenshots
 import './styles.scss'
 
-const rootData = await fetch('https://store.steampowered.com/api/appdetails?appids=438130', {
+Astro.response.headers.set('Cache-Control', 'private, no-cache, no-store, must-revalidate')
+
+const clientIp = Astro.request.headers.get('cf-connecting-ip') || Astro.request.headers.get('x-vercel-forwarded-for')?.split(',')[0].trim() || Astro.request.headers.get('x-forwarded-for')?.split(',')[0].trim() || ''
+
+const country = await fetch(`https://api.country.is/${clientIp}`).then(res => res.json().then(json => {
+	if (res.ok) {
+		return json
+	}
+	
+	throw new Error(json.message)
+})).then(data => {
+	return data.country ? data.country.toUpperCase() : 'US'
+}).catch(() => {
+	return 'US'
+})
+
+const rootData = await fetch(`https://store.steampowered.com/api/appdetails?appids=438130&cc=${country}`, {
 	method: 'GET',
 	headers: {
 		'Content-Type': 'application/json'
