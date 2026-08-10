@@ -7,16 +7,25 @@ import games from '../../utils/games.json'
 const screenshots = games.rootDouble.screenshots
 import './styles.scss'
 
-const clientIp = Astro.request.headers.get('x-forwarded-for') || Astro.request.headers.get('x-real-ip') || ''
+Astro.response.headers.set('Cache-Control', 'private, no-cache, no-store, must-revalidate')
+const clientIp = Astro.request.headers.get('x-forwarded-for')?.split(',')[0].trim() || Astro.request.headers.get('x-real-ip') || ''
 
-const rootData = await fetch(`https://store.steampowered.com/api/appdetails?appids=438130`, {
+const country = await fetch(`https://country.is/${clientIp}`).then(res => res.json().then(json => {
+	if (res.ok) {
+		return json
+	}
+
+	throw new Error(json.message)
+})).then(data => {
+	return data.country
+}).catch(() => {
+	return 'US'
+})
+
+const rootData = await fetch(`https://store.steampowered.com/api/appdetails?appids=438130&cc=${country}`, {
 	method: 'GET',
 	headers: {
-		'Content-Type': 'application/json',
-		'X-Forwarded-For': clientIp,
-		'X-Real-IP': clientIp,
-		'True-Client-IP': clientIp,
-		'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+		'Content-Type': 'application/json'
 	}
 }).then(res => res.json().then(json => {
 	if (res.ok) {
