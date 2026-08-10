@@ -9,11 +9,19 @@ import './styles.scss'
 
 Astro.response.headers.set('Cache-Control', 'private, no-cache, no-store, must-revalidate')
 
-const country = await fetch(`https://www.cloudflare.com/cdn-cgi/trace`).then(res => res.text().then(text => {
-	const locLine = text.split('\n').find(line => line.startsWith('loc='))
+const clientIp = Astro.request.headers.get('cf-connecting-ip') || Astro.request.headers.get('x-vercel-forwarded-for')?.split(',')[0].trim() || Astro.request.headers.get('x-forwarded-for')?.split(',')[0].trim() || ''
 
-	return locLine ? locLine.split('=')[1].trim().toUpperCase() : 'US'
-})).catch(() => 'US')
+const country = await fetch(`https://api.country.is/${clientIp}`).then(res => res.json().then(json => {
+	if (res.ok) {
+		return json
+	}
+	
+	throw new Error(json.message)
+})).then(data => {
+	return data.country ? data.country.toUpperCase() : 'US'
+}).catch(() => {
+	return 'US'
+})
 
 const rootData = await fetch(`https://store.steampowered.com/api/appdetails?appids=438130&cc=${country}`, {
 	method: 'GET',
