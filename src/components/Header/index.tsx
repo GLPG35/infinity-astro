@@ -36,6 +36,7 @@ const Header = ({ url, location }: { url: URL, location: string }) => {
 						<li><a href={translatePath('/never7', currentLang)} onClick={() => menuOpen && setMenuOpen(false)}>Never7</a></li>
 						<li><a href={translatePath('/ever17', currentLang)} onClick={() => menuOpen && setMenuOpen(false)}>Ever17</a></li>
 						<li><a href={translatePath('/remember11', currentLang)} onClick={() => menuOpen && setMenuOpen(false)}>Remember11</a></li>
+						<li><a href={translatePath('/12riven', currentLang)} onClick={() => menuOpen && setMenuOpen(false)}>12Riven</a></li>
 						<li><a href={translatePath('/more', currentLang)} onClick={() => menuOpen && setMenuOpen(false)}>{t('nav.more')}</a></li>
 					</ul>
 				</nav>
